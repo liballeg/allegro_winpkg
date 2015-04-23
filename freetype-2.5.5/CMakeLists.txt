@@ -195,7 +195,14 @@ if (BUILD_FRAMEWORK)
   )
 endif ()
 
-add_library(freetype
+add_library(freetype SHARED
+  ${PUBLIC_HEADERS}
+  ${PUBLIC_CONFIG_HEADERS}
+  ${PRIVATE_HEADERS}
+  ${BASE_SRCS}
+)
+
+add_library(freetype_static
   ${PUBLIC_HEADERS}
   ${PUBLIC_CONFIG_HEADERS}
   ${PRIVATE_HEADERS}
@@ -220,7 +227,7 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/
   DESTINATION include/freetype2
   PATTERN "internal" EXCLUDE
 )
-install(TARGETS freetype
+install(TARGETS freetype freetype_static
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
