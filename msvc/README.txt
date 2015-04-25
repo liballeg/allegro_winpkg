@@ -1,8 +1,8 @@
-Requirements (put both in PATH):
+Requirements:
 
 - MSVC
-- nasm
-- cmake
+- nasm (put this in PATH)
+- cmake (put this in PATH)
 - DXSDK (optional, but required for advanced features)
 
 To build the dependencies, run build_deps.bat from this directory.
