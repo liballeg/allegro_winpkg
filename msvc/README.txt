@@ -1,6 +1,7 @@
 Requirements:
 
-- MSVC
+- MSVC 2013 (if you're using something else, you'll need to edit the scripts
+  mentioned below. You'll need to rename the generator and the toolchain.)
 - nasm (put this in PATH)
 - cmake (put this in PATH)
 - DXSDK (optional, but required for advanced features)
