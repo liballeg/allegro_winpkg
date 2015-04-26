@@ -32,8 +32,7 @@ optdepends=(
     "${MINGW_PACKAGE_PREFIX}-physfs: allegro_physfs"
     "${MINGW_PACKAGE_PREFIX}-libtheora: allegro_video")
 options=('!strip' 'staticlibs')
-#source=("${_realname}::git+git://git.code.sf.net/p/alleg/allegro")
-source=("${_realname}::git+https://github.com/SiegeLord/allegro5.git#branch=libdirectx")
+source=("${_realname}::git+git://git.code.sf.net/p/alleg/allegro")
 conflicts=("${MINGW_PACKAGE_PREFIX}-allegro")
 provides=("${MINGW_PACKAGE_PREFIX}-allegro")
 sha256sums=('SKIP')
