@@ -126,7 +126,7 @@ build() {
 package() {
   cd "$srcdir/build-${MINGW_CHOST}"
   make install
-  cp lib/*.dll ${PREFIX_WIN}/bin
-  cp lib/*.a ${PREFIX_WIN}/lib
+  install -m755 lib/*.dll ${PREFIX_WIN}/bin
+  install -m644 lib/*.a ${PREFIX_WIN}/lib
   find "${pkgdir}${MINGW_PREFIX}" -name '*.bat' -o -name '*.def' -o -name '*.exp' | xargs -rtl1 rm
 }
