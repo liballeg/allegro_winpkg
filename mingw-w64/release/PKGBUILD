@@ -2,7 +2,7 @@
 
 _realname=allegro
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=5.1.9
+pkgver=5.1.10
 pkgrel=1
 pkgdesc="Portable library mainly aimed at video game and multimedia programming (mingw-w64)"
 arch=(any)
@@ -32,7 +32,7 @@ optdepends=(
     "${MINGW_PACKAGE_PREFIX}-libtheora: allegro_video")
 options=('!strip' 'staticlibs')
 source=("http://downloads.sourceforge.net/alleg/allegro-$pkgver.tar.gz")
-sha256sums=('b03855ea451366cb9114ae32cba199a4b360972ef32eb59d881bfc19a8e8c14a')
+sha256sums=('e8e8d604d60dc144022fd0af50a44bd9211fce87e7c150170209fa7b00d0ae8d')
 
 prepare() {
   cd "$srcdir/allegro-$pkgver"

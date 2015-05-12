@@ -1,9 +1,6 @@
 These directories contain the PKGBUILDs necessary to create Allegro packages
 for mingw-w64.
 
-NOTE: 5.1.9 package is broken (Allegro's build system can't handle the setup),
-and should only be used as a reference for future packages.
-
 Inside each directory, you can use the following commands to build the package.
 Run all these from msys2_shell.bat.
 
