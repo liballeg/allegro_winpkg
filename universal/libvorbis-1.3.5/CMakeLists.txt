@@ -63,6 +63,11 @@ add_library(vorbis_static ${VORBIS_SRCS})
 add_library(vorbisfile SHARED ${VORBISFILE_SRCS})
 add_library(vorbisfile_static ${VORBISFILE_SRCS})
 
+if(MSVC)
+    set_target_properties(vorbis_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(vorbisfile_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 target_link_libraries(vorbis "${OGG_LIBRARIES}")
 target_link_libraries(vorbisfile "${OGG_LIBRARIES};vorbis")
 

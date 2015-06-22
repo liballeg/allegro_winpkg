@@ -132,6 +132,7 @@ if(PNG_STATIC)
   if(MSVC)
     # msvc does not append 'lib' - do it here to have consistent name
     set_target_properties(${PNG_LIB_NAME_STATIC} PROPERTIES PREFIX "lib")
+    set_target_properties(${PNG_LIB_NAME_STATIC} PROPERTIES COMPILE_FLAGS /MT)
   endif()
   target_link_libraries(${PNG_LIB_NAME_STATIC} ${ZLIB_LIBRARY} ${M_LIBRARY})
 endif()

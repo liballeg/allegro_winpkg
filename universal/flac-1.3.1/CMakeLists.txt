@@ -110,6 +110,10 @@ endif()
 add_library(FLAC SHARED ${FLAC_SRCS})
 add_library(FLAC_static ${FLAC_SRCS})
 
+if(MSVC)
+    set_target_properties(FLAC_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 if(NOT MSVC)
     target_link_libraries(FLAC m)
 endif()

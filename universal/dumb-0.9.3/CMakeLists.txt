@@ -63,6 +63,10 @@ endif()
 
 add_library(dumb_static ${DUMB_SRCS})
 
+if(MSVC)
+    set_target_properties(dumb_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 install(TARGETS dumb_static
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib

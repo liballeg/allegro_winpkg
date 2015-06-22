@@ -64,6 +64,10 @@ include_directories("${OGG_INCLUDE_DIR}")
 add_library(theoradec SHARED ${THEORADEC_SRCS})
 add_library(theoradec_static ${THEORADEC_SRCS})
 
+if(MSVC)
+    set_target_properties(theoradec_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 target_link_libraries(theoradec "${OGG_LIBRARIES}")
 
 install(TARGETS theoradec theoradec_static

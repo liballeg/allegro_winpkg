@@ -209,6 +209,10 @@ add_library(freetype_static
   ${BASE_SRCS}
 )
 
+if(MSVC)
+    set_target_properties(freetype_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 if (BUILD_FRAMEWORK)
   set_property(SOURCE ${PUBLIC_CONFIG_HEADERS}
     PROPERTY MACOSX_PACKAGE_LOCATION Headers/config

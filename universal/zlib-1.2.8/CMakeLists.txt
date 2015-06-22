@@ -187,6 +187,9 @@ add_library(zlib SHARED ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_DLL_SRCS} ${ZLIB_PUBLIC
 add_library(zlibstatic STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
 set_target_properties(zlib PROPERTIES DEFINE_SYMBOL ZLIB_DLL)
 set_target_properties(zlib PROPERTIES SOVERSION 1)
+if(MSVC)
+    set_target_properties(zlibstatic PROPERTIES COMPILE_FLAGS /MT)
+endif()
 
 if(NOT CYGWIN)
     # This property causes shared libraries on Linux to have the full version

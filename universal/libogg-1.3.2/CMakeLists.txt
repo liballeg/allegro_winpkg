@@ -61,6 +61,10 @@ endif()
 add_library(ogg SHARED ${OGG_SRCS})
 add_library(ogg_static ${OGG_SRCS})
 
+if(MSVC)
+    set_target_properties(ogg_static PROPERTIES COMPILE_FLAGS /MT)
+endif()
+
 install(TARGETS ogg ogg_static
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
