@@ -63,4 +63,4 @@ exit /b %errorlevel%
 @echo Failed : use build_deps_msvc_32 or build_deps_msvc_64
 
 :success
-cd %root%
+

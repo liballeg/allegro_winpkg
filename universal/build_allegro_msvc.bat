@@ -34,4 +34,4 @@ exit /b %errorlevel%
 @echo Failed : Use build_allegro_msvc_32 or build_allegro_msvc_64
 
 :success
-cd %root%
+
