@@ -1,3 +1,5 @@
+if not defined output goto :nodirect
+
 set root=%cd%
 set common_args=-G %generator% -T %toolchain% -DCMAKE_INSTALL_PREFIX=%output%
 
@@ -54,8 +56,11 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 goto :success
 
 :error
-echo Failed with error #%errorlevel%.
+@echo Failed with error #%errorlevel%.
 exit /b %errorlevel%
+
+:nodirect
+@echo Failed : use build_deps_msvc_32 or build_deps_msvc_64
 
 :success
 cd %root%
