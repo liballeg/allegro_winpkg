@@ -1,7 +1,7 @@
 if not defined build_dir goto :nodirect
 
 set root=%cd%
-set common_args=-G %generator% -T %toolchain% -DCMAKE_PREFIX_PATH=%deps% -DCMAKE_INSTALL_PREFIX=%output% -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off
+set common_args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%deps%" -DCMAKE_INSTALL_PREFIX="%output%" -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off
 
 mkdir "%build_dir%\allegro"
 cd "%build_dir%\allegro"
