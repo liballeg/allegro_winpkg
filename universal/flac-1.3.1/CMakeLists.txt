@@ -107,18 +107,13 @@ else()
     add_definitions(-DVERSION=\"1.3.1\")
 endif()
 
-add_library(FLAC SHARED ${FLAC_SRCS})
-add_library(FLAC_static ${FLAC_SRCS})
+add_library(FLAC ${FLAC_SRCS})
 
 if(MSVC)
-    set_target_properties(FLAC_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(FLAC PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
-if(NOT MSVC)
-    target_link_libraries(FLAC m)
-endif()
-
-install(TARGETS FLAC FLAC_static
+install(TARGETS FLAC
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)

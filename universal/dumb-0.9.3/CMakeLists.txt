@@ -61,13 +61,13 @@ else()
 	add_definitions(-DDUMB_DECLARE_DEPRECATED)
 endif()
 
-add_library(dumb_static ${DUMB_SRCS})
+add_library(dumb ${DUMB_SRCS})
 
 if(MSVC)
-    set_target_properties(dumb_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(dumb PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
-install(TARGETS dumb_static
+install(TARGETS dumb
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)

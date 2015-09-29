@@ -58,20 +58,18 @@ endif()
 
 include_directories("${OGG_INCLUDE_DIR}")
 
-add_library(vorbis SHARED ${VORBIS_SRCS})
-add_library(vorbis_static ${VORBIS_SRCS})
-add_library(vorbisfile SHARED ${VORBISFILE_SRCS})
-add_library(vorbisfile_static ${VORBISFILE_SRCS})
+add_library(vorbis ${VORBIS_SRCS})
+add_library(vorbisfile ${VORBISFILE_SRCS})
 
 if(MSVC)
-    set_target_properties(vorbis_static PROPERTIES COMPILE_FLAGS /MT)
-    set_target_properties(vorbisfile_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(vorbis PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(vorbisfile PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
 target_link_libraries(vorbis "${OGG_LIBRARIES}")
 target_link_libraries(vorbisfile "${OGG_LIBRARIES};vorbis")
 
-install(TARGETS vorbis vorbis_static vorbisfile vorbisfile_static
+install(TARGETS vorbis vorbisfile
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)

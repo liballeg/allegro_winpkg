@@ -195,14 +195,7 @@ if (BUILD_FRAMEWORK)
   )
 endif ()
 
-add_library(freetype SHARED
-  ${PUBLIC_HEADERS}
-  ${PUBLIC_CONFIG_HEADERS}
-  ${PRIVATE_HEADERS}
-  ${BASE_SRCS}
-)
-
-add_library(freetype_static
+add_library(freetype
   ${PUBLIC_HEADERS}
   ${PUBLIC_CONFIG_HEADERS}
   ${PRIVATE_HEADERS}
@@ -210,18 +203,12 @@ add_library(freetype_static
 )
 
 if(MSVC)
-    set_target_properties(freetype_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(freetype PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
 if (BUILD_FRAMEWORK)
   set_property(SOURCE ${PUBLIC_CONFIG_HEADERS}
     PROPERTY MACOSX_PACKAGE_LOCATION Headers/config
-  )
-  set_target_properties(freetype PROPERTIES
-    FRAMEWORK TRUE
-    MACOSX_FRAMEWORK_INFO_PLIST builds/mac/freetype-Info.plist
-    PUBLIC_HEADER "${PUBLIC_HEADERS}"
-    XCODE_ATTRIBUTE_INSTALL_PATH "@rpath"
   )
 endif ()
 
@@ -231,7 +218,7 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/
   DESTINATION include/freetype2
   PATTERN "internal" EXCLUDE
 )
-install(TARGETS freetype freetype_static
+install(TARGETS freetype
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
