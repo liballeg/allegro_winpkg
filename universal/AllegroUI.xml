@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rule Name="ALLEG" PageTemplate="tool" DisplayName="Allegro Programming Library" SwitchPrefix="/" Order="10" xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Rule.Categories>
+    <Category Name="Addons" DisplayName="Add-ons" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" ItemType="" />
+  </Rule.DataSource>
+  <BoolProperty Name="Allegro_AddonImage" DisplayName="Image Addon" Default="False" Description="Include the Allegro addon for image loading/saving" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonTTF" DisplayName="Truetype Font Addon" Default="False" Description="Include the Allegro addon for displaying TTF fonts" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonPrimitives" DisplayName="Primitives Addon" Default="False" Description="Include the Allegro addon for drawing primitives" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonAudio" DisplayName="Audio Addon" Default="False" Description="Include the Allegro addon for audio" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonAcodec" DisplayName="Audio Codec Addon" Default="False" Description="Include the Allegro addon for audio codecs" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonPhysfs" DisplayName="PhysFS Addon" Default="False" Description="Include the Allegro addon for  PhysFS" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonDialog" DisplayName="Dialog Addon" Default="False" Description="Include the Allegro addon for native dialogs" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonMemfile" DisplayName="Memory File Addon" Default="False" Description="Include the Allegro addon for memory files" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonFont" DisplayName="Font Addon" Default="False" Description="Include the Allegro addon for font display" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonColor" DisplayName="Color Addon" Default="False" Description="Include the Allegro addon for advanced color handling" Category="Addons" />
+  <BoolProperty Name="Allegro_AddonVideo" DisplayName="Video Addon" Default="False" Description="Include the Allegro addon for video" Category="Addons" />
+</Rule>

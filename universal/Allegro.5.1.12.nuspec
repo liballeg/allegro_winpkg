@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Allegro</id>
+    <version>5.1.12</version>
+    <title>Allegro Game Programming Library</title>
+    <authors>Allegro Developers</authors>
+    <owners>Allegro Developers</owners>
+    <licenseUrl>http://liballeg.org/license.html</licenseUrl>
+    <projectUrl>http://liballeg.org/</projectUrl>
+    <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Allegro 5 is a cross-platform library mainly aimed at video game and multimedia programming. It handles common, low-level tasks such as creating windows, accepting user input, loading data, drawing images, playing sounds, etc. and generally abstracting away the underlying platform. However, Allegro is not a game engine: you are free to design and structure your program as you like.</description>
+    <summary>The Allegro 5 Game Programming Library</summary>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
+    <language>en-GB</language>
+    <tags>Native</tags>
+  </metadata>
+  <files>
+<!-- 32 bit libraries -->
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_audio.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_acodec.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_color.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_dialog.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_font.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_image.lib" target="build\native\lib\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\lib\jpeg.lib" target="build\native\lib\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\lib\libpng16.lib" target="build\native\lib\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\lib\zlib.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_main.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_memfile.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_physfs.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_primitives.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_ttf.lib" target="build\native\lib\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\lib\allegro_video.lib" target="build\native\lib\win32\" />
+<!-- 32 bit DLLs -->
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_audio-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_acodec-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_color-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_dialog-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_font-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_image-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\bin\jpeg62.dll" target="build\native\bin\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\bin\libpng16.dll" target="build\native\bin\win32\" />
+    <file src="allegro_deps-msvc2015-x86\allegro_deps\bin\zlib.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_main-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_memfile-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_physfs-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_primitives-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_ttf-5.1.dll" target="build\native\bin\win32\" />
+    <file src="allegro-msvc2015-x86\allegro\bin\allegro_video-5.1.dll" target="build\native\bin\win32\" />
+<!-- 64 bit libraries -->
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_audio.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_acodec.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_color.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_dialog.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_font.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_image.lib" target="build\native\lib\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\lib\jpeg.lib" target="build\native\lib\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\lib\libpng16.lib" target="build\native\lib\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\lib\zlib.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_main.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_memfile.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_physfs.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_primitives.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_ttf.lib" target="build\native\lib\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\lib\allegro_video.lib" target="build\native\lib\x64\" />
+<!-- 64 bit DLLs -->
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_audio-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_acodec-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_color-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_dialog-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_font-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_image-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\bin\jpeg62.dll" target="build\native\bin\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\bin\libpng16.dll" target="build\native\bin\x64\" />
+    <file src="allegro_deps-msvc2015-x64\allegro_deps\bin\zlib.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_main-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_memfile-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_physfs-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_primitives-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_ttf-5.1.dll" target="build\native\bin\x64\" />
+    <file src="allegro-msvc2015-x64\allegro\bin\allegro_video-5.1.dll" target="build\native\bin\x64\" />
+<!-- include files (same for 32 and 64 bit) -->
+    <file src="allegro-msvc2015-x86\allegro\include\**" target="build\native\include\" />
+<!-- additional targets and user interface definitions -->
+    <file src="Allegro.targets" target="build\native\Allegro.targets" />
+    <file src="AllegroUI.xml" target="build\native\AllegroUI.xml" />
+  </files>
+</package>

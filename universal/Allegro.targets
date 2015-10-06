@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\</AllegroBin>
+    <Allegro_CoreLibs>
+      $(AllegroLib)allegro.lib;
+      $(AllegroLib)allegro_main.lib
+    </Allegro_CoreLibs>
+    <Allegro_CoreDLLs>
+      $(AllegroBin)allegro-5.1.dll
+    </Allegro_CoreDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonImage)'=='true'">
+    <Allegro_AddonImageLibs>
+      $(AllegroLib)allegro_image.lib;
+      $(AllegroLib)jpeg.lib;
+      $(AllegroLib)libpng16.lib;
+      $(AllegroLib)zlib.lib
+    </Allegro_AddonImageLibs>
+    <Allegro_AddonImageDLLs>
+      $(AllegroBin)allegro_image-5.1.dll;
+      $(AllegroBin)jpeg62.dll;
+      $(AllegroBin)libpng16.dll;
+      $(AllegroBin)zlib.dll
+    </Allegro_AddonImageDLLs>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Allegro_AddonPhysfs)'=='true'">
+    <Allegro_AddonPhysfsLibs>
+      $(AllegroLib)allegro_physfs.lib
+    </Allegro_AddonPhysfsLibs>
+    <Allegro_AddonPhysfsDLLs>
+      $(AllegroBin)allegro_physfs-5.1.dll
+    </Allegro_AddonPhysfsDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonColor)'=='true'">
+    <Allegro_AddonColorLibs>
+      $(AllegroLib)allegro_color.lib
+    </Allegro_AddonColorLibs>
+    <Allegro_AddonColorDLLs>
+      $(AllegroBin)allegro_color-5.1.dll
+    </Allegro_AddonColorDLLs>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Allegro_AddonMemfile)'=='true'">
+    <Allegro_AddonMemfileLibs>
+      $(AllegroLib)allegro_memfile.lib
+    </Allegro_AddonMemfileLibs>
+    <Allegro_AddonMemfileDLLs>
+      $(AllegroBin)allegro_memfile-5.1.dll
+    </Allegro_AddonMemfileDLLs>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Allegro_AddonFont)'=='true'">
+    <Allegro_AddonFontLibs>
+      $(AllegroLib)allegro_font.lib
+    </Allegro_AddonFontLibs>
+    <Allegro_AddonFontDLLs>
+      $(AllegroBin)allegro_font-5.1.dll
+    </Allegro_AddonFontDLLs>
+  </PropertyGroup>
+  
+    <PropertyGroup Condition="'$(Allegro_AddonTTF)'=='true'">
+    <Allegro_AddonTTFLibs>
+      $(AllegroLib)allegro_ttf.lib;
+      $(AllegroLib)freetype.lib
+    </Allegro_AddonTTFLibs>
+    <Allegro_AddonTTFDLLs>
+      $(AllegroBin)allegro_ttf-5.1.dll;
+      $(AllegroBin)freetype.dll
+    </Allegro_AddonTTFDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonPrimitives)'=='true'">
+    <Allegro_AddonPrimitivesLibs>
+      $(AllegroLib)allegro_primitives.lib
+    </Allegro_AddonPrimitivesLibs>
+    <Allegro_AddonPrimitivesDLLs>
+      $(AllegroBin)allegro_primitives-5.1.dll
+    </Allegro_AddonPrimitivesDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonDialog)'=='true'">
+    <Allegro_AddonDialogLibs>
+      $(AllegroLib)allegro_dialog.lib
+    </Allegro_AddonDialogLibs>
+    <Allegro_AddonDialogDLLs>
+      $(AllegroBin)allegro_dialog-5.1.dll
+    </Allegro_AddonDialogDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonAudio)'=='true'">
+    <Allegro_AddonAudioLibs>
+      $(AllegroLib)allegro_audio.lib
+    </Allegro_AddonAudioLibs>
+    <Allegro_AddonAudioDLLs>
+      $(AllegroBin)allegro_audio-5.1.dll
+    </Allegro_AddonAudioDLLs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_AddonAcodec)'=='true'">
+    <Allegro_AddonAcodecLibs>
+      $(AllegroLib)allegro_acodec.lib;
+      $(AllegroLib)dumb_static.lib;
+      $(AllegroLib)FLAC.lib;
+      $(AllegroLib)vorbis.lib;
+      $(AllegroLib)vorbisfile.lib
+    </Allegro_AddonAcodecLibs>
+    <Allegro_AddonAcodecDLLs>
+      $(AllegroBin)allegro_acodec-5.1.dll;
+      $(AllegroBin)FLAC.dll;
+      $(AllegroBin)vorbis.dll;
+      $(AllegroBin)ogg.dll;
+      $(AllegroBin)vorbisfile.dll;
+    </Allegro_AddonAcodecDLLs>
+    
+  </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Allegro_AddonVideo)'=='true'">
+    <Allegro_AddonVideoLibs>
+      $(AllegroLib)allegro_video.lib
+    </Allegro_AddonVideoLibs>
+    <Allegro_AddonVideoDLLs>
+      $(AllegroBin)allegro_video-5.1.dll
+    </Allegro_AddonVideoDLLs>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+	$(MSBuildThisFileDirectory)\include\;
+	%(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>
+	$(Allegro_CoreLibs);
+	$(Allegro_AddonImageLibs);
+	$(Allegro_AddonColorLibs);
+	$(Allegro_AddonMemfileLibs);
+	$(Allegro_AddonFontLibs);
+	$(Allegro_AddonTTFLibs);
+	$(Allegro_AddonPhysfsLibs);
+	$(Allegro_AddonDialogLibs);
+	$(Allegro_AddonAudioLibs);
+	$(Allegro_AddonAcodecLibs);
+	$(Allegro_AddonPrimitivesLibs);
+	$(Allegro_AddonVideoLibs);
+	%(AdditionalDependencies)
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\AllegroUI.xml" />
+  </ItemGroup>
+  <Target Name="CopyDLLs" AfterTargets="AfterBuild">
+    <PropertyGroup>
+      <AllDLLs>
+	$(Allegro_CoreDLLs);
+	$(Allegro_AddonImageDLLs);
+	$(Allegro_AddonColorDLLs);
+	$(Allegro_AddonMemfileDLLs);
+	$(Allegro_AddonFontDLLs);
+	$(Allegro_AddonTTFDLLs);
+	$(Allegro_AddonPhysfsDLLs);
+	$(Allegro_AddonDialogDLLs);
+	$(Allegro_AddonAudioDLLs);
+	$(Allegro_AddonAcodecDLLs);
+	$(Allegro_AddonPrimitivesDLLs);
+	$(Allegro_AddonVideoDLLs);
+      </AllDLLs>
+    </PropertyGroup>
+    <Copy SourceFiles="$(AllDLLs)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

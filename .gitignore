@@ -1,0 +1,10 @@
+universal/allegro-msvc2015-x64/
+universal/allegro_deps-msvc2015-x64/
+universal/allegro-msvc2015-x86/
+universal/allegro_deps-msvc2015-x86/
+universal/allegro-msvc2013-x86/
+universal/allegro_deps-msvc2013-x86/
+universal/build_msvc_32/
+universal/build_msvc_64/
+*.nupkg
+*~
