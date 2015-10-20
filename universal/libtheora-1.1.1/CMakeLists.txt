@@ -61,16 +61,15 @@ endif()
 
 include_directories("${OGG_INCLUDE_DIR}")
 
-add_library(theoradec SHARED ${THEORADEC_SRCS})
-add_library(theoradec_static ${THEORADEC_SRCS})
+add_library(theoradec ${THEORADEC_SRCS})
 
 if(MSVC)
-    set_target_properties(theoradec_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(theoradec PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
 target_link_libraries(theoradec "${OGG_LIBRARIES}")
 
-install(TARGETS theoradec theoradec_static
+install(TARGETS theoradec
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)

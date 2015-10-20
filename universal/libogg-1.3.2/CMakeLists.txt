@@ -58,14 +58,13 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
     list(APPEND OGG_HDRS ${CMAKE_BINARY_DIR}/include/ogg/config_types.h)
 endif()
 
-add_library(ogg SHARED ${OGG_SRCS})
-add_library(ogg_static ${OGG_SRCS})
+add_library(ogg ${OGG_SRCS})
 
 if(MSVC)
-    set_target_properties(ogg_static PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(ogg PROPERTIES COMPILE_FLAGS /MT)
 endif()
 
-install(TARGETS ogg ogg_static
+install(TARGETS ogg
         RUNTIME DESTINATION bin
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib)
