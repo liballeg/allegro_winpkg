@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AllegroDeps</id>
+    <version>5.1.13</version>
+    <title>Allegro Dependencies Package</title>
+    <authors>Allegro Developers</authors>
+    <owners>Allegro Developers</owners>
+    <licenseUrl>http://liballeg.org/license.html</licenseUrl>
+    <projectUrl>http://liballeg.org/</projectUrl>
+    <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
+    <summary>The Allegro 5 Game Programming Library</summary>
+    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-unstable.html .</releaseNotes>
+    <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
+    <language>en-GB</language>
+    <tags>Native</tags>
+  </metadata>
+  <files>
+<!-- 32 bit libraries -->
+    <file src="nupkg\32\lib\dumb.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\FLAC.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\freetype.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\jpeg.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\libpng16.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\ogg.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\physfs.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\theoradec.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\vorbis.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\vorbisfile.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\lib\zlib.lib" target="build\native\lib\win32\" />
+<!-- 64 bit libraries -->
+    <file src="nupkg\64\lib\dumb.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\FLAC.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\freetype.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\jpeg.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\libpng16.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\ogg.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\physfs.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\theoradec.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\vorbis.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\vorbisfile.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\lib\zlib.lib" target="build\native\lib\x64\" />
+<!-- additional targets and user interface definitions -->
+    <file src="AllegroDeps.targets" target="build\native\AllegroDeps.targets" />
+  </files>
+</package>
