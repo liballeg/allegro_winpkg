@@ -31,7 +31,7 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 mkdir "%build_dir%\libpng"
 cd %build_dir%\libpng
 cmake "%root%\libpng-1.6.17" %common_args%  || goto :error
-cmake --build . --target INSTALL --config Release  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\libogg"
 cd %build_dir%\libogg
