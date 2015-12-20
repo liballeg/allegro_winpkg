@@ -1,132 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\</AllegroLib>
-    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\</AllegroBin>
-    </PropertyGroup>
-  <PropertyGroup Condition="'$(Allegro_Linkage)'=='Dynamic'">
+    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\v140\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\v140\</AllegroBin>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
+    <AllegroSuffix>-static</AllegroSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='DynamicDebug'">
+    <AllegroSuffix>-debug</AllegroSuffix>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_CoreLibs>
-      $(AllegroLib)allegro.lib;
-      $(AllegroLib)allegro_main.lib
+      $(AllegroLib)allegro$(AllegroSuffix).lib;
+      $(AllegroLib)allegro_main$(AllegroSuffix).lib
     </Allegro_CoreLibs>
     <Allegro_CoreDLLs>
-      $(AllegroBin)allegro-5.1.dll
+      $(AllegroBin)allegro$(AllegroSuffix)-5.1.dll
     </Allegro_CoreDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_Linkage)'!='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
     <Allegro_CoreLibs>
-      $(AllegroLib)allegro_monolith-static.lib;
+      $(AllegroLib)allegro_monolith$(AllegroSuffix).lib;
       opengl32.lib;
       winmm.lib;
-      Shlwapi.lib
+      Shlwapi.lib;
+      psapi.lib
     </Allegro_CoreLibs>
-    
   </PropertyGroup>
   
-  
-  <PropertyGroup Condition="'$(Allegro_AddonImage)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonImage)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonImageLibs>
-      $(AllegroLib)allegro_image.lib;
+      $(AllegroLib)allegro_image$(AllegroSuffix).lib;
     </Allegro_AddonImageLibs>
     <Allegro_AddonImageDLLs>
-      $(AllegroBin)allegro_image-5.1.dll;
+      $(AllegroBin)allegro_image$(AllegroSuffix)-5.1.dll;
     </Allegro_AddonImageDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonPhysfs)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonPhysfs)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonPhysfsLibs>
-      $(AllegroLib)allegro_physfs.lib
+      $(AllegroLib)allegro_physfs$(AllegroSuffix).lib
     </Allegro_AddonPhysfsLibs>
     <Allegro_AddonPhysfsDLLs>
-      $(AllegroBin)allegro_physfs-5.1.dll
+      $(AllegroBin)allegro_physfs$(AllegroSuffix)-5.1.dll
     </Allegro_AddonPhysfsDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonColor)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonColor)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonColorLibs>
-      $(AllegroLib)allegro_color.lib
+      $(AllegroLib)allegro_color$(AllegroSuffix).lib
     </Allegro_AddonColorLibs>
     <Allegro_AddonColorDLLs>
-      $(AllegroBin)allegro_color-5.1.dll
+      $(AllegroBin)allegro_color$(AllegroSuffix)-5.1.dll
     </Allegro_AddonColorDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonMemfile)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonMemfile)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonMemfileLibs>
-      $(AllegroLib)allegro_memfile.lib
+      $(AllegroLib)allegro_memfile$(AllegroSuffix).lib
     </Allegro_AddonMemfileLibs>
     <Allegro_AddonMemfileDLLs>
-      $(AllegroBin)allegro_memfile-5.1.dll
+      $(AllegroBin)allegro_memfile$(AllegroSuffix)-5.1.dll
     </Allegro_AddonMemfileDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonFont)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonFont)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonFontLibs>
-      $(AllegroLib)allegro_font.lib
+      $(AllegroLib)allegro_font$(AllegroSuffix).lib
     </Allegro_AddonFontLibs>
     <Allegro_AddonFontDLLs>
-      $(AllegroBin)allegro_font-5.1.dll
+      $(AllegroBin)allegro_font$(AllegroSuffix)-5.1.dll
     </Allegro_AddonFontDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonTTF)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonTTF)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonTTFLibs>
-      $(AllegroLib)allegro_ttf.lib;
+      $(AllegroLib)allegro_ttf$(AllegroSuffix).lib;
     </Allegro_AddonTTFLibs>
     <Allegro_AddonTTFDLLs>
-      $(AllegroBin)allegro_ttf-5.1.dll;
+      $(AllegroBin)allegro_ttf$(AllegroSuffix)-5.1.dll;
     </Allegro_AddonTTFDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonPrimitives)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonPrimitives)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonPrimitivesLibs>
-      $(AllegroLib)allegro_primitives.lib
+      $(AllegroLib)allegro_primitives$(AllegroSuffix).lib
     </Allegro_AddonPrimitivesLibs>
     <Allegro_AddonPrimitivesDLLs>
-      $(AllegroBin)allegro_primitives-5.1.dll
+      $(AllegroBin)allegro_primitives$(AllegroSuffix)-5.1.dll
     </Allegro_AddonPrimitivesDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonDialog)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonDialog)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonDialogLibs>
-      $(AllegroLib)allegro_dialog.lib
+      $(AllegroLib)allegro_dialog$(AllegroSuffix).lib
     </Allegro_AddonDialogLibs>
     <Allegro_AddonDialogDLLs>
-      $(AllegroBin)allegro_dialog-5.1.dll
+      $(AllegroBin)allegro_dialog$(AllegroSuffix)-5.1.dll
     </Allegro_AddonDialogDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonAudio)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonAudio)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonAudioLibs>
-      $(AllegroLib)allegro_audio.lib
+      $(AllegroLib)allegro_audio$(AllegroSuffix).lib
     </Allegro_AddonAudioLibs>
     <Allegro_AddonAudioDLLs>
-      $(AllegroBin)allegro_audio-5.1.dll
+      $(AllegroBin)allegro_audio$(AllegroSuffix)-5.1.dll
     </Allegro_AddonAudioDLLs>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonAcodec)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonAcodec)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonAcodecLibs>
-      $(AllegroLib)allegro_acodec.lib;
+      $(AllegroLib)allegro_acodec$(AllegroSuffix).lib;
     </Allegro_AddonAcodecLibs>
     <Allegro_AddonAcodecDLLs>
-      $(AllegroBin)allegro_acodec-5.1.dll;
+      $(AllegroBin)allegro_acodec$(AllegroSuffix)-5.1.dll;
     </Allegro_AddonAcodecDLLs>
 
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonVideo)'=='true' And '$(Allegro_Linkage)'=='Dynamic'">
+  <PropertyGroup Condition="'$(Allegro_AddonVideo)'=='true' And '$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <Allegro_AddonVideoLibs>
-      $(AllegroLib)allegro_video.lib
+      $(AllegroLib)allegro_video$(AllegroSuffix).lib
     </Allegro_AddonVideoLibs>
     <Allegro_AddonVideoDLLs>
-      $(AllegroBin)allegro_video-5.1.dll
+      $(AllegroBin)allegro_video$(AllegroSuffix)-5.1.dll
     </Allegro_AddonVideoDLLs>
   </PropertyGroup>
 
   <ItemDefinitionGroup>
-    <ClCompile Condition="'$(Allegro_Linkage)'!='Dynamic'">
+    <ClCompile Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
       <PreprocessorDefinitions>%(PreprocessorDefinitions);ALLEGRO_STATICLINK</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile>
@@ -160,7 +167,7 @@
   <ItemGroup>
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\AllegroUI.xml" />
   </ItemGroup>
-  <Target Name="CopyDLLs" AfterTargets="AfterBuild" Condition="'$(Allegro_Linkage)'=='Dynamic'">
+  <Target Name="CopyDLLs" AfterTargets="AfterBuild" Condition="'$(Allegro_LibraryType)'!='StaticMonolithRelease'">
     <PropertyGroup>
       <AllDLLs>
         $(Allegro_CoreDLLs);

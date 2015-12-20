@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>AllegroDeps</id>
-    <version>5.1.13</version>
+    <version>1.3.0.1</version>
     <title>Allegro Dependencies Package</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
@@ -19,29 +19,29 @@
   </metadata>
   <files>
 <!-- 32 bit libraries -->
-    <file src="nupkg\32\lib\dumb.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\FLAC.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\freetype.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\jpeg.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\libpng16.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\ogg.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\physfs.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\theoradec.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\vorbis.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\vorbisfile.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\zlib.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\v140\lib\dumb.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\FLAC.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\freetype.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\jpeg.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\libpng16.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\ogg.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\physfs.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\theoradec.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\vorbis.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\vorbisfile.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\zlib.lib" target="build\native\lib\win32\v140\" />
 <!-- 64 bit libraries -->
-    <file src="nupkg\64\lib\dumb.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\FLAC.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\freetype.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\jpeg.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\libpng16.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\ogg.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\physfs.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\theoradec.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\vorbis.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\vorbisfile.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\zlib.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\v140\lib\dumb.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\FLAC.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\freetype.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\jpeg.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\libpng16.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\ogg.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\physfs.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\theoradec.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\vorbis.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\vorbisfile.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\zlib.lib" target="build\native\lib\x64\v140\" />
 <!-- additional targets and user interface definitions -->
     <file src="AllegroDeps.targets" target="build\native\AllegroDeps.targets" />
   </files>

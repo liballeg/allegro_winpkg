@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\</AllegroLib>
-    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\</AllegroBin>
+    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\v140\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\v140\</AllegroBin>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonImage)'=='true'">
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
     <Allegro_AddonImageDeps>
       $(AllegroLib)jpeg.lib;
       $(AllegroLib)libpng16.lib;
@@ -13,15 +13,15 @@
     </Allegro_AddonImageDeps>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonTTF)'=='true'">
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
     <Allegro_AddonTTFDeps>
       $(AllegroLib)freetype.lib
     </Allegro_AddonTTFDeps>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Allegro_AddonAcodec)'=='true'">
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
     <Allegro_AddonAcodecDeps>
-      $(AllegroLib)dumb_static.lib;
+      $(AllegroLib)dumb.lib;
       $(AllegroLib)FLAC.lib;
       $(AllegroLib)vorbis.lib;
       $(AllegroLib)vorbisfile.lib

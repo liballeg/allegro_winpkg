@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Allegro</id>
-    <version>5.1.13</version>
+    <version>5.1.13.1</version>
     <title>Allegro Game Programming Library</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
@@ -18,71 +18,127 @@
     <tags>Native</tags>
     <dependencies>
       <group>
-        <dependency id="AllegroDeps" version="5.1.13" />
+        <dependency id="AllegroDeps" version="1.3.0" />
       </group>
     </dependencies>
   </metadata>
   <files>
 <!-- 32 bit libraries -->
-    <file src="nupkg\32\lib\allegro.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_monolith-static.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_audio.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_acodec.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_color.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_dialog.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_font.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_image.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_main.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_memfile.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_physfs.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_primitives.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_ttf.lib" target="build\native\lib\win32\" />
-    <file src="nupkg\32\lib\allegro_video.lib" target="build\native\lib\win32\" />
+    <file src="nupkg\32\v140\lib\allegro.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_monolith-static.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_audio.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_acodec.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_color.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_dialog.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_font.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_image.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_main.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_memfile.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_physfs.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_primitives.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_ttf.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_video.lib" target="build\native\lib\win32\v140\" />
+    
+    <file src="nupkg\32\v140\lib\allegro-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_audio-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_acodec-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_color-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_dialog-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_font-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_image-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_main-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_memfile-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_physfs-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_primitives-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_ttf-debug.lib" target="build\native\lib\win32\v140\" />
+    <file src="nupkg\32\v140\lib\allegro_video-debug.lib" target="build\native\lib\win32\v140\" />
 <!-- 32 bit DLLs -->
-    <file src="nupkg\32\bin\allegro-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_audio-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_acodec-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_color-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_dialog-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_font-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_image-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_main-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_memfile-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_physfs-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_primitives-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_ttf-5.1.dll" target="build\native\bin\win32\" />
-    <file src="nupkg\32\bin\allegro_video-5.1.dll" target="build\native\bin\win32\" />
+    <file src="nupkg\32\v140\bin\allegro-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_audio-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_acodec-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_color-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_dialog-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_font-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_image-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_main-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_memfile-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_physfs-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_primitives-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_ttf-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_video-5.1.dll" target="build\native\bin\win32\v140\" />
+    
+    <file src="nupkg\32\v140\bin\allegro-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_audio-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_acodec-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_color-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_dialog-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_font-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_image-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_main-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_memfile-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_physfs-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_primitives-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_ttf-debug-5.1.dll" target="build\native\bin\win32\v140\" />
+    <file src="nupkg\32\v140\bin\allegro_video-debug-5.1.dll" target="build\native\bin\win32\v140\" />
 <!-- 64 bit libraries -->
-    <file src="nupkg\64\lib\allegro.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_monolith-static.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_audio.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_acodec.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_color.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_dialog.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_font.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_image.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_main.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_memfile.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_physfs.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_primitives.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_ttf.lib" target="build\native\lib\x64\" />
-    <file src="nupkg\64\lib\allegro_video.lib" target="build\native\lib\x64\" />
+    <file src="nupkg\64\v140\lib\allegro.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_monolith-static.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_audio.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_acodec.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_color.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_dialog.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_font.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_image.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_main.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_memfile.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_physfs.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_primitives.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_ttf.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_video.lib" target="build\native\lib\x64\v140\" />
+    
+    <file src="nupkg\64\v140\lib\allegro-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_audio-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_acodec-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_color-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_dialog-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_font-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_image-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_main-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_memfile-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_physfs-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_primitives-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_ttf-debug.lib" target="build\native\lib\x64\v140\" />
+    <file src="nupkg\64\v140\lib\allegro_video-debug.lib" target="build\native\lib\x64\v140\" />
 <!-- 64 bit DLLs -->
-    <file src="nupkg\64\bin\allegro-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_audio-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_acodec-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_color-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_dialog-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_font-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_image-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_main-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_memfile-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_physfs-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_primitives-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_ttf-5.1.dll" target="build\native\bin\x64\" />
-    <file src="nupkg\64\bin\allegro_video-5.1.dll" target="build\native\bin\x64\" />
+    <file src="nupkg\64\v140\bin\allegro-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_audio-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_acodec-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_color-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_dialog-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_font-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_image-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_main-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_memfile-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_physfs-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_primitives-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_ttf-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_video-5.1.dll" target="build\native\bin\x64\v140\" />
+    
+    <file src="nupkg\64\v140\bin\allegro-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_audio-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_acodec-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_color-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_dialog-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_font-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_image-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_main-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_memfile-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_physfs-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_primitives-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_ttf-debug-5.1.dll" target="build\native\bin\x64\v140\" />
+    <file src="nupkg\64\v140\bin\allegro_video-debug-5.1.dll" target="build\native\bin\x64\v140\" />
 <!-- include files (same for 32 and 64 bit) -->
-    <file src="nupkg\32\include\**" target="build\native\include\" />
+    <file src="nupkg\32\v140\include\**" target="build\native\include\" />
 <!-- additional targets and user interface definitions -->
     <file src="Allegro.targets" target="build\native\Allegro.targets" />
     <file src="AllegroDeps.targets" target="build\native\AllegroDeps.targets" />
