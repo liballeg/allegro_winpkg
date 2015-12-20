@@ -1,10 +1,9 @@
-echo off
 setlocal
-set generator=
 set root=%cd%
+set toolchain=-T v140_xp
 
 echo ***** 32-bit Build *****
-set toolchain=
+set generator=-G "Visual Studio 14 2015"
 set buildroot=%root%\nupkg\32
 rem **** Static dependencies **** 
 set shared=no
@@ -20,7 +19,7 @@ call :allegro
 
 
 echo ***** 64-bit Build *****
-set toolchain=-A x64
+set generator=-G "Visual Studio 14 2015 Win64"
 set buildroot=%root%\nupkg\64
 rem **** Static dependencies **** 
 set shared=no
