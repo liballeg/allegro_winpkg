@@ -50,7 +50,7 @@ goto :EOF
 rem Build Allegro
 mkdir "%buildroot%\allegro"
 echo ***** Building Allegro shared=%shared% *****
-set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%" -DCMAKE_INSTALL_PREFIX="%buildroot%"
+set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_INSTALL_PREFIX="%buildroot%"
 set args=%args% -DWANT_MONOLITH=%monolith% -DSHARED=%shared% -DWANT_STATIC_RUNTIME=%static_runtime% -DCMAKE_BUILD_TYPE=%build_type%
 set args=%args% -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on
 cd %buildroot%\allegro
@@ -62,7 +62,7 @@ goto :EOF
 :makedeps
 
 rem Build all the dependencies
-set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%" -DCMAKE_INSTALL_PREFIX="%buildroot%"
+set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_INSTALL_PREFIX="%buildroot%\deps"
 
 call :makedep zlib-1.2.8
 call :makedep dumb-0.9.3

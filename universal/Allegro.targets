@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\v140\</AllegroLib>
-    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\v140\</AllegroBin>
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='DynamicDebug'">
+    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\v140\md\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\v140\md\</AllegroBin>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'!='DynamicDebug'">
+    <AllegroLib>$(MSBuildThisFileDirectory)lib\$(Platform)\v140\mt\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)bin\$(Platform)\v140\mt\</AllegroBin>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
