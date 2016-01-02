@@ -47,7 +47,8 @@ set(FLAC_HDRS
     include/FLAC/stream_decoder.h
     include/FLAC/stream_encoder.h)
 
-if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+# XXX: Why doesn't this work with MSYS2?
+if(CMAKE_SIZEOF_VOID_P EQUAL 4 AND MSVC)
     enable_language(ASM_NASM)
     set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -I${CMAKE_SOURCE_DIR}/src/libFLAC/ia32/")
 
@@ -59,7 +60,7 @@ endif()
 
 include_directories(include src/libFLAC/include)
 
-if(MSVC)
+if(WIN32)
     list(APPEND FLAC_SRCS
          src/share/win_utf8_io/win_utf8_io.c)
 endif()
@@ -73,7 +74,9 @@ if(MSVC)
     check_function_exists(lround HAVE_LROUND)
 else()
     include(CheckLibraryExists)
+    include(CheckFunctionExists)
     check_library_exists(m lround "" HAVE_LROUND)
+    check_function_exists(fseeko HAVE_FSEEKO)
 endif()
 
 if(MSVC)
@@ -103,6 +106,9 @@ else()
     endif()
     if(HAVE_LROUND)
         add_definitions(-DHAVE_LROUND)
+    endif()
+    if(HAVE_FSEEKO)
+        add_definitions(-DHAVE_FSEEKO)
     endif()
     add_definitions(-DVERSION=\"1.3.1\")
 endif()
