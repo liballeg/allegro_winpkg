@@ -64,7 +64,7 @@ include_directories("${OGG_INCLUDE_DIR}")
 add_library(theoradec ${THEORADEC_SRCS})
 
 if(MSVC)
-    set_target_properties(theoradec PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(theoradec PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 target_link_libraries(theoradec "${OGG_LIBRARIES}")

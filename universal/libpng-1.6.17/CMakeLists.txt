@@ -116,7 +116,7 @@ list(APPEND PNG_LIB_TARGETS ${PNG_LIB_NAME})
 if(MSVC)
   # msvc does not append 'lib' - do it here to have consistent name
   set_target_properties(${PNG_LIB_NAME} PROPERTIES PREFIX "lib")
-  set_target_properties(${PNG_LIB_NAME} PROPERTIES COMPILE_FLAGS /MT)
+  set_target_properties(${PNG_LIB_NAME} PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 target_link_libraries(${PNG_LIB_NAME} ${ZLIB_LIBRARY} ${M_LIBRARY})
 

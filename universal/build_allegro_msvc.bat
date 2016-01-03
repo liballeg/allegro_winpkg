@@ -16,14 +16,14 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
-cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=Debug
+cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
 cmake --build . --target INSTALL --config Debug  || goto :error
-cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=Debug
+cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
 cmake --build . --target INSTALL --config Debug  || goto :error
-::~ cmake %root%\allegro -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
-::~ cmake --build . --target INSTALL --config Debug  || goto :error
-::~ cmake %root%\allegro -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
-::~ cmake --build . --target INSTALL --config Debug  || goto :error
+cmake %root%\allegro -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
+cmake --build . --target INSTALL --config Debug  || goto :error
+cmake %root%\allegro -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug
+cmake --build . --target INSTALL --config Debug  || goto :error
 
 goto :success
 

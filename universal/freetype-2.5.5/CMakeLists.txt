@@ -203,7 +203,7 @@ add_library(freetype
 )
 
 if(MSVC)
-    set_target_properties(freetype PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(freetype PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 if (BUILD_FRAMEWORK)

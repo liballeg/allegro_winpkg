@@ -62,8 +62,8 @@ add_library(vorbis ${VORBIS_SRCS})
 add_library(vorbisfile ${VORBISFILE_SRCS})
 
 if(MSVC)
-    set_target_properties(vorbis PROPERTIES COMPILE_FLAGS /MT)
-    set_target_properties(vorbisfile PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(vorbis PROPERTIES COMPILE_FLAGS "/MT /Zl")
+    set_target_properties(vorbisfile PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 target_link_libraries(vorbis "${OGG_LIBRARIES}")

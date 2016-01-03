@@ -185,7 +185,7 @@ endif(MINGW)
 
 add_library(zlib STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
 if(MSVC)
-    set_target_properties(zlib PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(zlib PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 if(UNIX)

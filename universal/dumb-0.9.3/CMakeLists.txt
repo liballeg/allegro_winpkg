@@ -64,7 +64,7 @@ endif()
 add_library(dumb ${DUMB_SRCS})
 
 if(MSVC)
-    set_target_properties(dumb PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(dumb PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 install(TARGETS dumb

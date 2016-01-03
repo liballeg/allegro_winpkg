@@ -116,7 +116,7 @@ endif()
 add_library(FLAC ${FLAC_SRCS})
 
 if(MSVC)
-    set_target_properties(FLAC PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(FLAC PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 install(TARGETS FLAC

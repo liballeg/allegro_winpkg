@@ -61,7 +61,7 @@ endif()
 add_library(ogg ${OGG_SRCS})
 
 if(MSVC)
-    set_target_properties(ogg PROPERTIES COMPILE_FLAGS /MT)
+    set_target_properties(ogg PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()
 
 install(TARGETS ogg
