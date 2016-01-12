@@ -23,10 +23,22 @@
       $(AllegroLib)dumb.lib;
       $(AllegroLib)FLAC.lib;
       $(AllegroLib)vorbis.lib;
-      $(AllegroLib)vorbisfile.lib
+      $(AllegroLib)vorbisfile.lib;
+      $(AllegroLib)ogg.lib
     </Allegro_AddonAcodecDeps>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
+    <Allegro_AddonPhysfsDeps>
+      $(AllegroLib)physfs.lib
+    </Allegro_AddonPhysfsDeps>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
+    <Allegro_AddonVideoDeps>
+      $(AllegroLib)theoradec.lib
+    </Allegro_AddonVideoDeps>
+  </PropertyGroup>
 
   <ItemDefinitionGroup>
     <ClCompile>
@@ -42,6 +54,8 @@
         $(Allegro_AddonImageDeps);
         $(Allegro_AddonTTFDeps);
         $(Allegro_AddonAcodecDeps);
+        $(Allegro_AddonPhysfsDeps);
+        $(Allegro_AddonVideoDeps);
         %(AdditionalDependencies)
       </AdditionalDependencies>
     </Link>
