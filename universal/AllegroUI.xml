@@ -8,7 +8,7 @@
     <DataSource Persistence="ProjectFile" ItemType="" />
   </Rule.DataSource>
   <EnumProperty Name="Allegro_LibraryType" DisplayName="Library Type" Description="Select which library to link to" Category="LibraryType" Default="DynamicRelease">
-    <EnumValue Name="StaticMonolithRelease" DisplayName="Static Monolith Release - Static runtime" />
+    <EnumValue Name="StaticMonolithRelease" DisplayName="Static Monolith Release" />
     <EnumValue Name="DynamicRelease" DisplayName="Dynamic Release - Static runtime"/>
     <EnumValue Name="DynamicDebug" DisplayName="Dynamic Debug - Dynamic runtime"/>
   </EnumProperty>

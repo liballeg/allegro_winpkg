@@ -1,15 +1,28 @@
 setlocal
 set root=%cd%
-set toolchain=-T v140_xp
+
+echo ***** 32-bit MSVC 2013 Build *****
+set toolchain=-T v120_xp
+set generator=-G "Visual Studio 12 2013"
+set buildroot=%root%\nupkg\v120\win32
+call :build_all
+
+echo ***** 64-bit MSVC 2013 Build *****
+set toolchain=-T v120_xp
+set generator=-G "Visual Studio 12 2013 Win64"
+set buildroot=%root%\nupkg\v120\x64
+call :build_all
 
 echo ***** 32-bit MSVC 2015 Build *****
+set toolchain=-T v140_xp
 set generator=-G "Visual Studio 14 2015"
-set buildroot=%root%\nupkg\32\v140
+set buildroot=%root%\nupkg\v140\win32
 call :build_all
 
 echo ***** 64-bit MSVC 2015 Build *****
+set toolchain=-T v140_xp
 set generator=-G "Visual Studio 14 2015 Win64"
-set buildroot=%root%\nupkg\64\v140
+set buildroot=%root%\nupkg\v140\x64
 call :build_all
 
 rem ***** Make NUGET Package *****
