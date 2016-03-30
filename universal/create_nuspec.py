@@ -117,11 +117,13 @@ for version in ['v120', 'v140']:
 		allegro_lines.append(make_line(bits, version, 'lib', 'allegro_monolith-static.lib'))
 		for filename in DEPS_FILENAMES:
 			deps_lines.append(make_line(bits, version, 'deps\\lib', filename))
-		for debug in ['-debug', '']:
-			for dll in [('bin', '-5.1.dll'), ('lib', '.lib')]:
-				for basename in ALLEGRO_BASENAMES:
+		for basename in ALLEGRO_BASENAMES:
+			for debug in ['-debug', '']:
+				for dll in [('bin', '-5.2.dll'), ('lib', '.lib')]:
 					filename = basename + debug + dll[1]
 					allegro_lines.append(make_line(bits, version, dll[0], filename))
+			filename = basename + '-debug.pdb'
+			allegro_lines.append(make_line(bits, version, 'lib', filename))
 
 allegro_nuspec = ALLEGRO_NUSPEC_TEMPLATE.format(
 	allegro_version=ARGS.allegro_version,
