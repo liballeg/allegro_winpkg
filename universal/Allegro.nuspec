@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Allegro</id>
-    <version>5.2.0.0</version>
+    <version>5.2.1.1</version>
     <title>Allegro Game Programming Library</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>

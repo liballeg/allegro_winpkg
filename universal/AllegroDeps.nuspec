@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
     <summary>The Allegro 5 Game Programming Library</summary>
-    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-unstable.html .</releaseNotes>
+    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html .</releaseNotes>
     <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>

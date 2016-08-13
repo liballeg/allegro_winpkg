@@ -26,9 +26,9 @@
     </Allegro_CoreDLLs>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Allegro_LibraryType)'=='DynamicDebug'">
-    <Allegro_AddonCorePDBs>
+    <Allegro_CorePDBs>
       $(AllegroLib)allegro-debug.pdb;
-    </Allegro_AddonCorePDBs>
+    </Allegro_CorePDBs>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
