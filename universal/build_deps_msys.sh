@@ -71,3 +71,13 @@ mkdir -p "${build_dir}/flac"
 cd ${build_dir}/flac
 eval cmake "${root}/flac-1.3.1" ${common_args}
 make install ${parallel}
+
+mkdir -p "${build_dir}/opus"
+cd ${build_dir}/opus
+eval cmake "${root}/opus-1.1.3" ${common_args}
+make install ${parallel}
+
+mkdir -p "${build_dir}/opusfile"
+cd ${build_dir}/opusfile
+eval cmake "${root}/opusfile-0.8" ${common_args}
+make install ${parallel}

@@ -22,8 +22,8 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allegro 5 is a cross-platform library mainly aimed at video game and multimedia programming. It handles common, low-level tasks such as creating windows, accepting user input, loading data, drawing images, playing sounds, etc. and generally abstracting away the underlying platform. However, Allegro is not a game engine: you are free to design and structure your program as you like.</description>
     <summary>The Allegro 5 Game Programming Library</summary>
-    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-unstable.html </releaseNotes>
-    <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
+    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
+    <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
     <dependencies>
@@ -59,8 +59,8 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
     <summary>The Allegro 5 Game Programming Library</summary>
-    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-unstable.html .</releaseNotes>
-    <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
+    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
+    <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
   </metadata>
@@ -101,7 +101,9 @@ DEPS_FILENAMES = [
 	"theoradec.lib",
 	"vorbis.lib",
 	"vorbisfile.lib",
-	"zlib.lib"
+	"zlib.lib",
+	"opus.lib",
+	"opusfile.lib"
 ]
 
 def make_line(bits, version, dll_loc, filename):

@@ -27,7 +27,9 @@
       $(AllegroLib)FLAC.lib;
       $(AllegroLib)vorbis.lib;
       $(AllegroLib)vorbisfile.lib;
-      $(AllegroLib)ogg.lib
+      $(AllegroLib)ogg.lib;
+      $(AllegroLib)opus.lib;
+      $(AllegroLib)opusfile.lib
     </Allegro_AddonAcodecDeps>
   </PropertyGroup>
 

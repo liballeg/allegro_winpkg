@@ -53,6 +53,16 @@ cd %build_dir%\flac
 cmake "%root%\flac-1.3.1" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
+mkdir "%build_dir%\opus"
+cd %build_dir%\opus
+cmake "%root%\opus-1.1.3" %common_args%  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+
+mkdir "%build_dir%\opusfile"
+cd %build_dir%\opusfile
+cmake "%root%\opusfile-0.8" %common_args%  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+
 goto :success
 
 :error

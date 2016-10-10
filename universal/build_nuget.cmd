@@ -87,6 +87,8 @@ call :makedep libvorbis-1.3.5
 call :makedep libtheora-1.1.1
 call :makedep flac-1.3.1 
 call :makedep physfs-2.0.3 "-DPHYSFS_BUILD_TEST=no"
+call :makedep opus-1.1.3
+call :makedep opusfile-0.8
 goto :EOF
 
 :makedep

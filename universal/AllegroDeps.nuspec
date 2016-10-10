@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>AllegroDeps</id>
-    <version>1.4.0.0</version>
+    <version>1.5.0.0</version>
     <title>Allegro Dependencies Package</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
@@ -13,8 +13,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
     <summary>The Allegro 5 Game Programming Library</summary>
-    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html .</releaseNotes>
-    <copyright>Copyright © 2008-2015 the Allegro 5 Development Team</copyright>
+    <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
+    <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
   </metadata>
@@ -34,6 +34,8 @@
     <file src="nupkg\v120\win32\deps\lib\vorbis.lib" target="build\native\v120\win32\deps\lib\" />
     <file src="nupkg\v120\win32\deps\lib\vorbisfile.lib" target="build\native\v120\win32\deps\lib\" />
     <file src="nupkg\v120\win32\deps\lib\zlib.lib" target="build\native\v120\win32\deps\lib\" />
+    <file src="nupkg\v120\win32\deps\lib\opus.lib" target="build\native\v120\win32\deps\lib\" />
+    <file src="nupkg\v120\win32\deps\lib\opusfile.lib" target="build\native\v120\win32\deps\lib\" />
     <file src="nupkg\v120\x64\deps\lib\dumb.lib" target="build\native\v120\x64\deps\lib\" />
     <file src="nupkg\v120\x64\deps\lib\FLAC.lib" target="build\native\v120\x64\deps\lib\" />
     <file src="nupkg\v120\x64\deps\lib\freetype.lib" target="build\native\v120\x64\deps\lib\" />
@@ -45,6 +47,8 @@
     <file src="nupkg\v120\x64\deps\lib\vorbis.lib" target="build\native\v120\x64\deps\lib\" />
     <file src="nupkg\v120\x64\deps\lib\vorbisfile.lib" target="build\native\v120\x64\deps\lib\" />
     <file src="nupkg\v120\x64\deps\lib\zlib.lib" target="build\native\v120\x64\deps\lib\" />
+    <file src="nupkg\v120\x64\deps\lib\opus.lib" target="build\native\v120\x64\deps\lib\" />
+    <file src="nupkg\v120\x64\deps\lib\opusfile.lib" target="build\native\v120\x64\deps\lib\" />
     <file src="nupkg\v140\win32\deps\lib\dumb.lib" target="build\native\v140\win32\deps\lib\" />
     <file src="nupkg\v140\win32\deps\lib\FLAC.lib" target="build\native\v140\win32\deps\lib\" />
     <file src="nupkg\v140\win32\deps\lib\freetype.lib" target="build\native\v140\win32\deps\lib\" />
@@ -56,6 +60,8 @@
     <file src="nupkg\v140\win32\deps\lib\vorbis.lib" target="build\native\v140\win32\deps\lib\" />
     <file src="nupkg\v140\win32\deps\lib\vorbisfile.lib" target="build\native\v140\win32\deps\lib\" />
     <file src="nupkg\v140\win32\deps\lib\zlib.lib" target="build\native\v140\win32\deps\lib\" />
+    <file src="nupkg\v140\win32\deps\lib\opus.lib" target="build\native\v140\win32\deps\lib\" />
+    <file src="nupkg\v140\win32\deps\lib\opusfile.lib" target="build\native\v140\win32\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\dumb.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\FLAC.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\freetype.lib" target="build\native\v140\x64\deps\lib\" />
@@ -67,5 +73,7 @@
     <file src="nupkg\v140\x64\deps\lib\vorbis.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\vorbisfile.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\zlib.lib" target="build\native\v140\x64\deps\lib\" />
+    <file src="nupkg\v140\x64\deps\lib\opus.lib" target="build\native\v140\x64\deps\lib\" />
+    <file src="nupkg\v140\x64\deps\lib\opusfile.lib" target="build\native\v140\x64\deps\lib\" />
   </files>
 </package>

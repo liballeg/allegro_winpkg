@@ -27,6 +27,7 @@ common_args="${common_args} -DOGG_INCLUDE_DIR=\"${deps_dir}/include\" -DOGG_LIBR
 common_args="${common_args} -DFREETYPE_INCLUDE_DIR_freetype2=\"${deps_dir}/include/freetype2\" -DFREETYPE_INCLUDE_DIR_ft2build=\"${deps_dir}/include/freetype2\" -DFREETYPE_LIBRARY=\"${deps_dir}/lib/libfreetype.a\""
 common_args="${common_args} -DPHYSFS_INCLUDE_DIR=\"${deps_dir}/include\" -DPHYSFS_LIBRARY=\"${deps_dir}/lib/libphysfs.a\""
 common_args="${common_args} -DTHEORA_INCLUDE_DIR=\"${deps_dir}/include\" -DTHEORA_LIBRARY=\"${deps_dir}/lib/libtheoradec.a\""
+common_args="${common_args} -DOPUS_INCLUDE_DIR=\"${deps_dir}/include/opus\" -DOPUS_LIBRARY=\"${deps_dir}/lib/libopus.a\" -DOPUSFILE_LIBRARY=\"${deps_dir}/lib/libopusfile.a\""
 
 if [ -n "$generator" ]
 then
