@@ -75,5 +75,31 @@
     <file src="nupkg\v140\x64\deps\lib\zlib.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\opus.lib" target="build\native\v140\x64\deps\lib\" />
     <file src="nupkg\v140\x64\deps\lib\opusfile.lib" target="build\native\v140\x64\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\dumb.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\FLAC.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\freetype.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\jpeg.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\libpng16.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\ogg.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\physfs.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\theoradec.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\vorbis.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\vorbisfile.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\zlib.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\opus.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\win32\deps\lib\opusfile.lib" target="build\native\v141\win32\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\dumb.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\FLAC.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\freetype.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\jpeg.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\libpng16.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\ogg.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\physfs.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\theoradec.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\vorbis.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\vorbisfile.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\zlib.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\opus.lib" target="build\native\v141\x64\deps\lib\" />
+    <file src="nupkg\v141\x64\deps\lib\opusfile.lib" target="build\native\v141\x64\deps\lib\" />
   </files>
 </package>
