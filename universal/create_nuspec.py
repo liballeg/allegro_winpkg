@@ -5,6 +5,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--allegro_version', default='5.1.13.0')
 parser.add_argument('--allegro_deps_version', default='1.4.0.0')
+parser.add_argument('--toolchains', default='v120,v140')
+parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
 
 ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
@@ -114,8 +116,8 @@ def make_line(bits, version, dll_loc, filename):
 
 allegro_lines = []
 deps_lines = []
-for version in ['v120', 'v140']:
-	for bits in ['win32', 'x64']:
+for version in ARGS.toolchains.split(','):
+	for bits in ARGS.bits.split(','):
 		allegro_lines.append(make_line(bits, version, 'lib', 'allegro_monolith-static.lib'))
 		for filename in DEPS_FILENAMES:
 			deps_lines.append(make_line(bits, version, 'deps\\lib', filename))
