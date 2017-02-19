@@ -9,7 +9,7 @@ Requirements:
 - DXSDK (optional, but required for advanced features)
 - python
 
-Then, you typically want to run create_nuspec with the versions you want to support, e.g.:
+Extract Allegro's source into a subdirectory named 'allegro'. Then, you typically want to run create_nuspec with the versions you want to support, e.g.:
 
     python create_nuspec.py --allegro_version 5.2.3.0 --allegro_deps_version 1.5.0.0 --toolchains v120,v140
 
