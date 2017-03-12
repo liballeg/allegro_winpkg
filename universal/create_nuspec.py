@@ -36,7 +36,7 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
   </metadata>
   <files>
 <!-- include files (same for all versions) -->
-    <file src="nupkg\\v140\\win32\\include\\**" target="build\\native\\include\\" />
+    <file src="nupkg\\{include_toolchain}\\win32\\include\\**" target="build\\native\\include\\" />
 <!-- additional targets and user interface definitions -->
     <file src="Allegro.targets" target="build\\native\\Allegro.targets" />
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
@@ -68,7 +68,7 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
   </metadata>
   <files>
 <!-- include files (same for all versions) -->
-    <file src="nupkg\\v140\\win32\\deps\\include\\**" target="build\\native\\include\\" />
+    <file src="nupkg\\{include_toolchain}\\win32\\deps\\include\\**" target="build\\native\\include\\" />
 <!-- additional targets and user interface definitions -->
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
     {extra_files}
@@ -114,9 +114,10 @@ def make_line(bits, version, dll_loc, filename):
 	to_path = '\\'.join(['build', 'native', loc, ''])
 	return '<file src="' + from_path + '" target="' + to_path + '" />'
 
+toolchains = ARGS.toolchains.split(',')
 allegro_lines = []
 deps_lines = []
-for version in ARGS.toolchains.split(','):
+for version in toolchains:
 	for bits in ARGS.bits.split(','):
 		allegro_lines.append(make_line(bits, version, 'lib', 'allegro_monolith-static.lib'))
 		for filename in DEPS_FILENAMES:
@@ -132,12 +133,14 @@ for version in ARGS.toolchains.split(','):
 allegro_nuspec = ALLEGRO_NUSPEC_TEMPLATE.format(
 	allegro_version=ARGS.allegro_version,
 	allegro_deps_version=ARGS.allegro_deps_version,
-	extra_files='\n    '.join(allegro_lines)
+	extra_files='\n    '.join(allegro_lines),
+	include_toolchain=toolchains[0]
 	)
 
 deps_nuspec = ALLEGRO_DEPS_NUSPEC_TEMPLATE.format(
 	allegro_deps_version=ARGS.allegro_deps_version,
-	extra_files='\n    '.join(deps_lines)
+	extra_files='\n    '.join(deps_lines),
+	include_toolchain=toolchains[0]
 	)
 
 with open('Allegro.nuspec', 'w') as f:

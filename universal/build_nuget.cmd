@@ -1,17 +1,17 @@
 setlocal
 set root=%cd%
 
-echo ***** 32-bit MSVC 2013 Build *****
-set toolchain=-T v120_xp
-set generator=-G "Visual Studio 12 2013"
-set buildroot=%root%\nupkg\v120\win32
-call :build_all
-
-echo ***** 64-bit MSVC 2013 Build *****
-set toolchain=-T v120_xp
-set generator=-G "Visual Studio 12 2013 Win64"
-set buildroot=%root%\nupkg\v120\x64
-call :build_all
+rem echo ***** 32-bit MSVC 2013 Build *****
+rem set toolchain=-T v120_xp
+rem set generator=-G "Visual Studio 12 2013"
+rem set buildroot=%root%\nupkg\v120\win32
+rem call :build_all
+rem 
+rem echo ***** 64-bit MSVC 2013 Build *****
+rem set toolchain=-T v120_xp
+rem set generator=-G "Visual Studio 12 2013 Win64"
+rem set buildroot=%root%\nupkg\v120\x64
+rem call :build_all
 
 echo ***** 32-bit MSVC 2015 Build *****
 set toolchain=-T v140_xp

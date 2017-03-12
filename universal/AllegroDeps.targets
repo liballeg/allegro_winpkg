@@ -6,6 +6,9 @@
   <PropertyGroup Condition="'$(PlatformToolset.Contains(v140))'">
     <AllegroLib>$(MSBuildThisFileDirectory)v140\$(Platform)\deps\lib\</AllegroLib>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(PlatformToolset.Contains(v141))'">
+    <AllegroLib>$(MSBuildThisFileDirectory)v141\$(Platform)\deps\lib\</AllegroLib>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(Allegro_LibraryType)'=='StaticMonolithRelease'">
     <Allegro_AddonImageDeps>
