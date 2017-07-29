@@ -24,7 +24,22 @@ set -e
 
 mkdir -p "${build_dir}/zlib"
 cd "${build_dir}/zlib"
-eval cmake "${root}/zlib-1.2.8" ${common_args}
+eval cmake "${root}/zlib-1.2.11" ${common_args}
+make install ${parallel}
+
+mkdir -p "${build_dir}/libpng"
+cd ${build_dir}/libpng
+eval cmake "${root}/libpng-1.6.30" ${common_args}
+make install ${parallel}
+
+mkdir -p "${build_dir}/freetype"
+cd "${build_dir}/freetype"
+eval cmake "${root}/freetype-2.8" ${common_args} -DWITH_HarfBuzz=OFF -DWITH_BZip2=OFF
+make install ${parallel}
+
+mkdir -p "${build_dir}/libjpeg-turbo"
+cd "${build_dir}/libjpeg-turbo"
+eval cmake "${root}/libjpeg-turbo-1.5.2" ${common_args} -DWITH_TURBOJPEG=false -DENABLE_SHARED=false
 make install ${parallel}
 
 mkdir -p "${build_dir}/physfs"
@@ -35,21 +50,6 @@ make install ${parallel}
 mkdir -p "${build_dir}/dumb"
 cd "${build_dir}/dumb"
 eval cmake "${root}/dumb-0.9.3" ${common_args}
-make install ${parallel}
-
-mkdir -p "${build_dir}/freetype"
-cd "${build_dir}/freetype"
-eval cmake "${root}/freetype-2.5.5" ${common_args}
-make install ${parallel}
-
-mkdir -p "${build_dir}/libjpeg-turbo"
-cd "${build_dir}/libjpeg-turbo"
-eval cmake "${root}/libjpeg-turbo-1.4.0" ${common_args} -DWITH_TURBOJPEG=false
-make install ${parallel}
-
-mkdir -p "${build_dir}/libpng"
-cd ${build_dir}/libpng
-eval cmake "${root}/libpng-1.6.17" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/libogg"
@@ -69,12 +69,12 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/flac"
 cd ${build_dir}/flac
-eval cmake "${root}/flac-1.3.1" ${common_args}
+eval cmake "${root}/flac-1.3.2" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/opus"
 cd ${build_dir}/opus
-eval cmake "${root}/opus-1.1.3" ${common_args}
+eval cmake "${root}/opus-1.2.1" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/opusfile"

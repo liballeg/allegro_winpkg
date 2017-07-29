@@ -5,7 +5,7 @@ set common_args=%generator% %toolchain% -DCMAKE_INSTALL_PREFIX="%output%"
 
 mkdir "%build_dir%\zlib"
 cd %build_dir%\zlib
-cmake "%root%\zlib-1.2.8" %common_args%  || goto :error
+cmake "%root%\zlib-1.2.11" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\physfs"
@@ -18,19 +18,19 @@ cd %build_dir%\dumb
 cmake "%root%\dumb-0.9.3" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
+mkdir "%build_dir%\libpng"
+cd %build_dir%\libpng
+cmake "%root%\libpng-1.6.30" %common_args%  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+
 mkdir "%build_dir%\freetype"
 cd %build_dir%\freetype
-cmake "%root%\freetype-2.5.5" %common_args%  || goto :error
+cmake "%root%\freetype-2.8" %common_args%  -DWITH_HarfBuzz=OFF -DWITH_BZip2=OFF || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\libjpeg-turbo"
 cd %build_dir%\libjpeg-turbo
-cmake "%root%\libjpeg-turbo-1.4.0" %common_args% -DWITH_TURBOJPEG=false  || goto :error
-cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
-
-mkdir "%build_dir%\libpng"
-cd %build_dir%\libpng
-cmake "%root%\libpng-1.6.17" %common_args%  || goto :error
+cmake "%root%\libjpeg-turbo-1.5.2" %common_args% -DWITH_TURBOJPEG=false -DENABLE_SHARED=false || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\libogg"
@@ -50,12 +50,12 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\flac"
 cd %build_dir%\flac
-cmake "%root%\flac-1.3.1" %common_args%  || goto :error
+cmake "%root%\flac-1.3.2" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\opus"
 cd %build_dir%\opus
-cmake "%root%\opus-1.1.3" %common_args%  || goto :error
+cmake "%root%\opus-1.2.1" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\opusfile"
