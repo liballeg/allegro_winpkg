@@ -12,3 +12,5 @@ libraries) inside allegro_deps_msys_{bits} directory.
 To build Allegro, extract Allegro's source into a subdirectory named 'allegro' 
 and then run build_allegro_msys_{bits}.sh. This will place the outputs inside 
 the allegro_msys_{bits} directory.
+
+Once you built everything, you can create Allegro packages by running package_msys.sh.
