@@ -1,7 +1,7 @@
 if not defined output goto :nodirect
 
 set root=%cd%
-set common_args=%generator% %toolchain% -DCMAKE_INSTALL_PREFIX="%output%"
+set common_args=%generator% %toolchain% -DCMAKE_INSTALL_PREFIX="%output%" 
 
 mkdir "%build_dir%\zlib"
 cd %build_dir%\zlib
