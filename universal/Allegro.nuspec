@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Allegro</id>
-    <version>5.2.3.0</version>
+    <version>5.2.3.1</version>
     <title>Allegro Game Programming Library</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
@@ -19,7 +19,7 @@
     <tags>Native</tags>
     <dependencies>
       <group>
-        <dependency id="AllegroDeps" version="[1.6.0.0]" />
+        <dependency id="AllegroDeps" version="[1.7.0.0]" />
       </group>
     </dependencies>
   </metadata>

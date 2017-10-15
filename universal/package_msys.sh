@@ -3,8 +3,8 @@
 set -x
 set -e
 
-ALLEGRO_VERSION=5.2.3.0
-DEPS_VERSION=1.6.0
+ALLEGRO_VERSION=5.2.3.1
+DEPS_VERSION=1.7.0
 GCC_VERSION=7.2.0
 
 make_deps_package() {
