@@ -16,7 +16,7 @@ dynamic_output_dir="$root/$4/dynamic_rt"
 parallel=-j8
 
 common_args="-DCMAKE_FIND_ROOT_PATH=\"${deps_dir}\""
-common_args="${common_args} -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DWANT_OPENAL=off"
+common_args="${common_args} -DWANT_EXAMPLES=on -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DWANT_OPENAL=off"
 common_args="${common_args} -DZLIB_INCLUDE_DIR=\"${deps_dir}/include\" -DZLIB_LIBRARY=\"${deps_dir}/lib/libzlib.a\""
 common_args="${common_args} -DPNG_PNG_INCLUDE_DIR=\"${deps_dir}/include\" -DPNG_LIBRARY_RELEASE=\"${deps_dir}/lib/libpng16.a\""
 common_args="${common_args} -DJPEG_INCLUDE_DIR=\"${deps_dir}/include\" -DJPEG_LIBRARY=\"${deps_dir}/lib/libjpeg.a\""
@@ -28,7 +28,7 @@ common_args="${common_args} -DFREETYPE_INCLUDE_DIR_freetype2=\"${deps_dir}/inclu
 common_args="${common_args} -DPHYSFS_INCLUDE_DIR=\"${deps_dir}/include\" -DPHYSFS_LIBRARY=\"${deps_dir}/lib/libphysfs.a\""
 common_args="${common_args} -DTHEORA_INCLUDE_DIR=\"${deps_dir}/include\" -DTHEORA_LIBRARY=\"${deps_dir}/lib/libtheoradec.a\""
 common_args="${common_args} -DOPUS_INCLUDE_DIR=\"${deps_dir}/include/opus\" -DOPUS_LIBRARY=\"${deps_dir}/lib/libopus.a\" -DOPUSFILE_LIBRARY=\"${deps_dir}/lib/libopusfile.a\""
-common_args="${common_args} -DWANT_IMAGE_WEBP=off"
+common_args="${common_args} -DWEBP_INCLUDE_DIRS=\"${deps_dir}/include/webp\" -DWEBP_LIBRARIES=\"${deps_dir}/lib/libwebp.a\""
 
 if [ -n "$generator" ]
 then

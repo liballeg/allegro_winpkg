@@ -90,17 +90,20 @@ rem Build all the dependencies
 set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_INSTALL_PREFIX="%buildroot%\deps"
 
 call :makedep zlib-1.2.11
-call :makedep physfs-2.0.3 "-DPHYSFS_BUILD_TEST=no"
-call :makedep dumb-0.9.3
-call :makedep libpng-1.6.30
-call :makedep freetype-2.8 "-DWITH_HarfBuzz=OFF" "-DWITH_BZip2=OFF"
-call :makedep libjpeg-turbo-1.5.2 "-DWITH_TURBOJPEG=false" "-DENABLE_SHARED=false"
-call :makedep libogg-1.3.2
-call :makedep libvorbis-1.3.5
+call :makedep libpng-1.6.36
+call :makedep freetype-2.9.1 "-DWITH_HarfBuzz=off" "-DWITH_BZip2=off"
+call :makedep libjpeg-turbo-2.0.1 "-DWITH_TURBOJPEG=false" "-DENABLE_SHARED=false"
+call :makedep physfs-3.0.1 "-DPHYSFS_BUILD_TEST=off"
+call :makedep dumb-2.0.3 "-DBUILD_EXAMPLES=off" "-DBUILD_ALLEGRO4=off"
+call :makedep libogg-1.3.3
+call :makedep libvorbis-1.3.6
 call :makedep libtheora-1.1.1
 call :makedep flac-1.3.2
-call :makedep opus-1.2.1
-call :makedep opusfile-0.8
+call :makedep opus-1.3
+call :makedep opusfile-0.11
+call :makedep libwebp-1.0.2 "-DWEBP_BUILD_ANIM_UTILS=off" "-DWEBP_BUILD_CWEBP=off" "-DWEBP_BUILD_DWEBP=off" ^
+	"-DWEBP_BUILD_GIF2WEBP=off" "-DWEBP_BUILD_IMG2WEBP=off" "-DWEBP_BUILD_VWEBP=off" "-DWEBP_BUILD_WEBPINFO=off" "-DWEBP_BUILD_WEBPMUX=off" ^
+	"-DWEBP_BUILD_EXTRAS=off"
 goto :EOF
 
 :makedep

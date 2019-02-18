@@ -3,9 +3,10 @@
 set -x
 set -e
 
-ALLEGRO_VERSION=5.2.4.1
-DEPS_VERSION=1.7.0
-GCC_VERSION=7.2.0
+ALLEGRO_VERSION=5.2.5.0
+DEPS_VERSION=1.8.0
+GCC_VERSION_32=7.4.0
+GCC_VERSION_64=8.2.1
 
 make_deps_package() {
 	# $1 - path to copy from
@@ -38,10 +39,10 @@ rm -rf $STAGING
 mkdir -p $STAGING
 cd $STAGING
 
-make_deps_package allegro_deps_msys_32 allegro_deps-i686-w64-mingw32-gcc-$GCC_VERSION-posix-dwarf
-make_deps_package allegro_deps_msys_64 allegro_deps-x86_64-w64-mingw32-gcc-$GCC_VERSION-posix-seh
+make_deps_package allegro_deps_msys_32 allegro_deps-i686-w64-mingw32-gcc-$GCC_VERSION_32-posix-dwarf
+make_deps_package allegro_deps_msys_64 allegro_deps-x86_64-w64-mingw32-gcc-$GCC_VERSION_64-posix-seh
 
-make_allegro_package allegro_msys_32/dynamic_rt allegro-i686-w64-mingw32-gcc-$GCC_VERSION-posix-dwarf-dynamic
-make_allegro_package allegro_msys_32/static_rt allegro-i686-w64-mingw32-gcc-$GCC_VERSION-posix-dwarf-static
-make_allegro_package allegro_msys_64/dynamic_rt allegro-x86_64-w64-mingw32-gcc-$GCC_VERSION-posix-seh-dynamic
-make_allegro_package allegro_msys_64/static_rt allegro-x86_64-w64-mingw32-gcc-$GCC_VERSION-posix-seh-static
+make_allegro_package allegro_msys_32/dynamic_rt allegro-i686-w64-mingw32-gcc-$GCC_VERSION_32-posix-dwarf-dynamic
+make_allegro_package allegro_msys_32/static_rt allegro-i686-w64-mingw32-gcc-$GCC_VERSION_32-posix-dwarf-static
+make_allegro_package allegro_msys_64/dynamic_rt allegro-x86_64-w64-mingw32-gcc-$GCC_VERSION_64-posix-seh-dynamic
+make_allegro_package allegro_msys_64/static_rt allegro-x86_64-w64-mingw32-gcc-$GCC_VERSION_64-posix-seh-static

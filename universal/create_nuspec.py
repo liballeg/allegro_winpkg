@@ -3,9 +3,9 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.1.13.0')
-parser.add_argument('--allegro_deps_version', default='1.4.0.0')
-parser.add_argument('--toolchains', default='v120,v140')
+parser.add_argument('--allegro_version', default='5.2.5.0')
+parser.add_argument('--allegro_deps_version', default='1.8.0.0')
+parser.add_argument('--toolchains', default='v140,v141')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
 
@@ -105,7 +105,10 @@ DEPS_FILENAMES = [
 	"vorbisfile.lib",
 	"zlib.lib",
 	"opus.lib",
-	"opusfile.lib"
+	"opusfile.lib",
+	"webp.lib",
+	"webpdecoder.lib",
+	"webpdemux.lib",
 ]
 
 def make_line(bits, version, dll_loc, filename):
