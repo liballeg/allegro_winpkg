@@ -25,7 +25,7 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\physfs"
 cd %build_dir%\physfs
-cmake "%root%\physfs-3.0.1" %common_args% -DPHYSFS_BUILD_TEST=off || goto :error
+cmake "%root%\physfs-3.0.2" %common_args% -DPHYSFS_BUILD_TEST=off || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo || goto :error
 
 mkdir "%build_dir%\dumb"

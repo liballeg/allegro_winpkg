@@ -566,17 +566,25 @@ char *__PHYSFS_platformCalcUserDir(void)
     else
     {
         DWORD psize = 0;
-        WCHAR dummy = 0;
         LPWSTR wstr = NULL;
         BOOL rc = 0;
 
         /*
          * Should fail. Will write the size of the profile path in
          *  psize. Also note that the second parameter can't be
-         *  NULL or the function fails.
+         *  NULL or the function fails on Windows XP, but has to be NULL on
+         *  Windows 10 or it will fail.  :(
          */
-        rc = pGetDir(accessToken, &dummy, &psize);
+        rc = pGetDir(accessToken, NULL, &psize);
         GOTO_IF(rc, PHYSFS_ERR_OS_ERROR, done);  /* should have failed! */
+
+        if (psize == 0)  /* probably on Windows XP, try a different way. */
+        {
+            WCHAR x = 0;
+            rc = pGetDir(accessToken, &x, &psize);
+            GOTO_IF(rc, PHYSFS_ERR_OS_ERROR, done);  /* should have failed! */
+            GOTO_IF(!psize, PHYSFS_ERR_OS_ERROR, done);  /* Uhoh... */
+        } /* if */
 
         /* Allocate memory for the profile directory */
         wstr = (LPWSTR) __PHYSFS_smallAlloc((psize + 1) * sizeof (WCHAR));

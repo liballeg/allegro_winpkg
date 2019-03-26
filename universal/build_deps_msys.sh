@@ -45,7 +45,7 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/physfs"
 cd "${build_dir}/physfs"
-eval cmake "${root}/physfs-3.0.1" ${common_args} -DPHYSFS_BUILD_TEST=off
+eval cmake "${root}/physfs-3.0.2" ${common_args} -DPHYSFS_BUILD_TEST=off
 make install ${parallel}
 
 mkdir -p "${build_dir}/dumb"

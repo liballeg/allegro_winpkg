@@ -93,7 +93,7 @@ call :makedep zlib-1.2.11
 call :makedep libpng-1.6.36
 call :makedep freetype-2.9.1 "-DWITH_HarfBuzz=off" "-DWITH_BZip2=off"
 call :makedep libjpeg-turbo-2.0.1 "-DWITH_TURBOJPEG=false" "-DENABLE_SHARED=false"
-call :makedep physfs-3.0.1 "-DPHYSFS_BUILD_TEST=off"
+call :makedep physfs-3.0.2 "-DPHYSFS_BUILD_TEST=off"
 call :makedep dumb-2.0.3 "-DBUILD_EXAMPLES=off" "-DBUILD_ALLEGRO4=off"
 call :makedep libogg-1.3.3
 call :makedep libvorbis-1.3.6
