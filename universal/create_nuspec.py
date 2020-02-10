@@ -4,7 +4,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--allegro_version', default='5.2.6.0')
-parser.add_argument('--allegro_deps_version', default='1.10.0.0')
+parser.add_argument('--allegro_deps_version', default='1.11.0.0')
 parser.add_argument('--toolchains', default='v141,v142')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
