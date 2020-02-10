@@ -3,10 +3,10 @@
 set -x
 set -e
 
-ALLEGRO_VERSION=5.2.5.1
-DEPS_VERSION=1.9.0
-GCC_VERSION_32=7.4.0
-GCC_VERSION_64=8.2.1
+ALLEGRO_VERSION=5.2.6.0
+DEPS_VERSION=1.10.0
+GCC_VERSION_32=9.2.0
+GCC_VERSION_64=9.2.0
 
 make_deps_package() {
 	# $1 - path to copy from

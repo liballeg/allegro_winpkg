@@ -3,7 +3,7 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.5.2')
+parser.add_argument('--allegro_version', default='5.2.6.0')
 parser.add_argument('--allegro_deps_version', default='1.10.0.0')
 parser.add_argument('--toolchains', default='v141,v142')
 parser.add_argument('--bits', default='win32,x64')
@@ -18,12 +18,11 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <title>Allegro Game Programming Library</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
-    <licenseUrl>http://liballeg.org/license.html</licenseUrl>
+    <license type="expression">Zlib</license>
     <projectUrl>http://liballeg.org/</projectUrl>
     <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allegro 5 is a cross-platform library mainly aimed at video game and multimedia programming. It handles common, low-level tasks such as creating windows, accepting user input, loading data, drawing images, playing sounds, etc. and generally abstracting away the underlying platform. However, Allegro is not a game engine: you are free to design and structure your program as you like.</description>
-    <summary>The Allegro 5 Game Programming Library</summary>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
     <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
@@ -55,12 +54,11 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <title>Allegro Dependencies Package</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
-    <licenseUrl>http://liballeg.org/license.html</licenseUrl>
+    <license type="expression">Zlib</license>
     <projectUrl>http://liballeg.org/</projectUrl>
     <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
-    <summary>The Allegro 5 Game Programming Library</summary>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
     <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>

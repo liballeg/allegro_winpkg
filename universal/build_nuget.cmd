@@ -27,13 +27,13 @@ rem call :build_all
 
 echo ***** 32-bit MSVC 2017 Build *****
 set toolchain=-T v141_xp
-set generator=-G "Visual Studio 15 2017"
+set generator=-G "Visual Studio 16 2019" -A Win32
 set buildroot=%root%\nupkg\v141\win32
 call :build_all
 
 echo ***** 64-bit MSVC 2017 Build *****
 set toolchain=-T v141_xp
-set generator=-G "Visual Studio 15 2017 Win64"
+set generator=-G "Visual Studio 16 2019" -A x64
 set buildroot=%root%\nupkg\v141\x64
 call :build_all
 
