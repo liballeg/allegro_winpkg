@@ -29,6 +29,7 @@ common_args="${common_args} -DPHYSFS_INCLUDE_DIR=\"${deps_dir}/include\" -DPHYSF
 common_args="${common_args} -DTHEORA_INCLUDE_DIR=\"${deps_dir}/include\" -DTHEORA_LIBRARY=\"${deps_dir}/lib/libtheoradec.a\""
 common_args="${common_args} -DOPUS_INCLUDE_DIR=\"${deps_dir}/include/opus\" -DOPUS_LIBRARY=\"${deps_dir}/lib/libopus.a\" -DOPUSFILE_LIBRARY=\"${deps_dir}/lib/libopusfile.a\""
 common_args="${common_args} -DWEBP_INCLUDE_DIRS=\"${deps_dir}/include/webp\" -DWEBP_LIBRARIES=\"${deps_dir}/lib/libwebp.a\""
+common_args="${common_args} -DMINIMP3_INCLUDE_DIRS=\"${deps_dir}/include\""
 
 if [ -n "$generator" ]
 then

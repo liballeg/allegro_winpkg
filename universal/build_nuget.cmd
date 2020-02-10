@@ -101,6 +101,9 @@ goto :EOF
 rem Build all the dependencies
 set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_INSTALL_PREFIX="%buildroot%\deps"
 
+mkdir "%buildroot%\deps\include"
+copy "%root%\minimp3\*.h" "%buildroot%\deps\include"
+
 call :makedep zlib-1.2.11
 call :makedep libpng-1.6.36
 call :makedep freetype-2.9.1 "-DWITH_HarfBuzz=off" "-DWITH_BZip2=off"

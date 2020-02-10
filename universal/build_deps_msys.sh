@@ -22,6 +22,9 @@ fi
 set -x
 set -e
 
+mkdir -p "${output_dir}/include"
+cp minimp3/*.h "${output_dir}/include"
+
 mkdir -p "${build_dir}/zlib"
 cd "${build_dir}/zlib"
 eval cmake "${root}/zlib-1.2.11" ${common_args}

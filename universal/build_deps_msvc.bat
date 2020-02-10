@@ -3,6 +3,9 @@ if not defined output goto :nodirect
 set root=%cd%
 set common_args=%generator% %toolchain% -DCMAKE_INSTALL_PREFIX="%output%" 
 
+mkdir "%output%\include"
+copy minimp3\*.h "%output%\include"
+
 mkdir "%build_dir%\zlib"
 cd %build_dir%\zlib
 cmake "%root%\zlib-1.2.11" %common_args%  || goto :error
