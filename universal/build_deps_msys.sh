@@ -11,7 +11,7 @@ root=$(pwd)
 generator=$1
 build_dir="$root/$2"
 output_dir="$root/$3"
-parallel=-j8
+parallel=-j$(nproc)
 
 common_args="-DCMAKE_PREFIX_PATH=\"${output_dir}\" -DCMAKE_INSTALL_PREFIX=\"${output_dir}\""
 if [ -n "$generator" ]
