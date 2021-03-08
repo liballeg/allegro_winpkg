@@ -49,6 +49,18 @@ set generator=-G "Visual Studio 16 2019" -A x64
 set buildroot=%root%\nupkg\v142\x64
 call :build_all
 
+echo ***** 32-bit MSVC 2019 Build *****
+set toolchain=-T ClangCL
+set generator=-G "Visual Studio 16 2019" -A Win32
+set buildroot=%root%\nupkg\ClangCL\win32
+call :build_all
+
+echo ***** 64-bit MSVC 2019 Build *****
+set toolchain=-T ClangCL
+set generator=-G "Visual Studio 16 2019" -A x64
+set buildroot=%root%\nupkg\ClangCL\x64
+call :build_all
+
 rem ***** Make NUGET Package *****
 cd %root%
 nuget pack Allegro.nuspec
