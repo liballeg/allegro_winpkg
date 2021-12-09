@@ -16,6 +16,10 @@
     <AllegroLib>$(MSBuildThisFileDirectory)v142\$(Platform)\lib\</AllegroLib>
     <AllegroBin>$(MSBuildThisFileDirectory)v142\$(Platform)\bin\</AllegroBin>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(PlatformToolset.Contains(v143))'">
+    <AllegroLib>$(MSBuildThisFileDirectory)v143\$(Platform)\lib\</AllegroLib>
+    <AllegroBin>$(MSBuildThisFileDirectory)v143\$(Platform)\bin\</AllegroBin>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(PlatformToolset.Contains(ClangCL))'">
     <AllegroLib>$(MSBuildThisFileDirectory)ClangCL\$(Platform)\lib\</AllegroLib>
     <AllegroBin>$(MSBuildThisFileDirectory)ClangCL\$(Platform)\bin\</AllegroBin>

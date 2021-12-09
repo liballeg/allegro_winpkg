@@ -3,9 +3,9 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.7.0')
-parser.add_argument('--allegro_deps_version', default='1.12.0.0')
-parser.add_argument('--toolchains', default='v141,v142,ClangCL')
+parser.add_argument('--allegro_version', default='5.2.7.1')
+parser.add_argument('--allegro_deps_version', default='1.12.1.0')
+parser.add_argument('--toolchains', default='v142,v143,ClangCL')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
 
@@ -24,7 +24,7 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allegro 5 is a cross-platform library mainly aimed at video game and multimedia programming. It handles common, low-level tasks such as creating windows, accepting user input, loading data, drawing images, playing sounds, etc. and generally abstracting away the underlying platform. However, Allegro is not a game engine: you are free to design and structure your program as you like.</description>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
-    <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
+    <copyright>Copyright © 2008-2021 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
     <dependencies>
@@ -60,7 +60,7 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
-    <copyright>Copyright © 2008-2016 the Allegro 5 Development Team</copyright>
+    <copyright>Copyright © 2008-2021 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
   </metadata>

@@ -1,5 +1,6 @@
 setlocal
 set root=%cd%
+set jobs=16
 
 rem echo ***** 32-bit MSVC 2013 Build *****
 rem set toolchain=-T v120_xp
@@ -25,39 +26,75 @@ rem set generator=-G "Visual Studio 14 2015 Win64"
 rem set buildroot=%root%\nupkg\v140\x64
 rem call :build_all
 
-echo ***** 32-bit MSVC 2017 Build *****
-set toolchain=-T v141_xp
-set generator=-G "Visual Studio 16 2019" -A Win32
-set buildroot=%root%\nupkg\v141\win32
-call :build_all
+REM ~ echo ***** 32-bit MSVC 2017 Build *****
+REM ~ set toolchain=-T v141_xp
+REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
+REM ~ set buildroot=%root%\nupkg\v141\win32
+REM ~ call :build_all
 
-echo ***** 64-bit MSVC 2017 Build *****
-set toolchain=-T v141_xp
-set generator=-G "Visual Studio 16 2019" -A x64
-set buildroot=%root%\nupkg\v141\x64
-call :build_all
+REM ~ echo ***** 64-bit MSVC 2017 Build *****
+REM ~ set toolchain=-T v141_xp
+REM ~ set generator=-G "Visual Studio 16 2019" -A x64
+REM ~ set buildroot=%root%\nupkg\v141\x64
+REM ~ call :build_all
 
-echo ***** 32-bit MSVC 2019 Build *****
+REM ~ echo ***** 32-bit MSVC 2019 Build *****
+REM ~ set toolchain=-T v142
+REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
+REM ~ set buildroot=%root%\nupkg\v142\win32
+REM ~ call :build_all
+
+REM ~ echo ***** 64-bit MSVC 2019 Build *****
+REM ~ set toolchain=-T v142
+REM ~ set generator=-G "Visual Studio 16 2019" -A x64
+REM ~ set buildroot=%root%\nupkg\v142\x64
+REM ~ call :build_all
+
+REM ~ echo ***** 32-bit MSVC 2019 Build *****
+REM ~ set toolchain=-T ClangCL
+REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
+REM ~ set buildroot=%root%\nupkg\ClangCL\win32
+REM ~ call :build_all
+
+REM ~ echo ***** 64-bit MSVC 2019 Build *****
+REM ~ set toolchain=-T ClangCL
+REM ~ set generator=-G "Visual Studio 16 2019" -A x64
+REM ~ set buildroot=%root%\nupkg\ClangCL\x64
+REM ~ call :build_all
+
+echo ***** 32-bit MSVC 2022 Build *****
 set toolchain=-T v142
-set generator=-G "Visual Studio 16 2019" -A Win32
+set generator=-G "Visual Studio 17 2022" -A Win32
 set buildroot=%root%\nupkg\v142\win32
 call :build_all
 
-echo ***** 64-bit MSVC 2019 Build *****
+echo ***** 64-bit MSVC 2022 Build *****
 set toolchain=-T v142
-set generator=-G "Visual Studio 16 2019" -A x64
+set generator=-G "Visual Studio 17 2022" -A x64
 set buildroot=%root%\nupkg\v142\x64
 call :build_all
 
-echo ***** 32-bit MSVC 2019 Build *****
+echo ***** 32-bit MSVC 2022 Build *****
+set toolchain=-T v143
+set generator=-G "Visual Studio 17 2022" -A Win32
+set buildroot=%root%\nupkg\v143\win32
+call :build_all
+
+echo ***** 64-bit MSVC 2022 Build *****
+set toolchain=-T v143
+set generator=-G "Visual Studio 17 2022" -A x64
+set buildroot=%root%\nupkg\v143\x64
+call :build_all
+
+echo ***** 32-bit MSVC 2022 Build *****
 set toolchain=-T ClangCL
-set generator=-G "Visual Studio 16 2019" -A Win32
+set generator=-G "Visual Studio 17 2022" -A Win32
 set buildroot=%root%\nupkg\ClangCL\win32
 call :build_all
 
-echo ***** 64-bit MSVC 2019 Build *****
+echo ***** 64-bit MSVC 2022 Build *****
 set toolchain=-T ClangCL
-set generator=-G "Visual Studio 16 2019" -A x64
+set generator=-G "Visual Studio 17 2022" -A x64
 set buildroot=%root%\nupkg\ClangCL\x64
 call :build_all
 
@@ -104,7 +141,7 @@ set args=%args% -DWANT_MONOLITH=%monolith% -DSHARED=%shared% -DWANT_STATIC_RUNTI
 set args=%args% -DWANT_NATIVE_IMAGE_LOADER=off -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DFREETYPE_ZLIB=on -DFREETYPE_PNG=on
 cd %buildroot%\allegro
 cmake  %args% "%root%\allegro" || goto :error
-cmake --build . --target INSTALL --config %build_type% || goto :error
+cmake --build . --target INSTALL --config %build_type% -j %jobs% || goto :error
 
 goto :EOF
 
@@ -140,7 +177,7 @@ echo ***** Building Dependency %dep_name% *****
 mkdir "%buildroot%\%dep_name%"
 cd %buildroot%\%dep_name%
 cmake  %args% %* "%root%\%dep_name%"  || goto :error
-cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo -j %jobs% || goto :error
 goto :EOF
 
 :error

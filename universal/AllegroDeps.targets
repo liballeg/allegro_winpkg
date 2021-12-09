@@ -12,6 +12,9 @@
   <PropertyGroup Condition="'$(PlatformToolset.Contains(v142))'">
     <AllegroLib>$(MSBuildThisFileDirectory)v142\$(Platform)\deps\lib\</AllegroLib>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(PlatformToolset.Contains(v143))'">
+    <AllegroLib>$(MSBuildThisFileDirectory)v143\$(Platform)\deps\lib\</AllegroLib>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(PlatformToolset.Contains(ClangCL))'">
     <AllegroLib>$(MSBuildThisFileDirectory)ClangCL\$(Platform)\deps\lib\</AllegroLib>
   </PropertyGroup>
