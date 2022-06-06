@@ -16,7 +16,7 @@ dynamic_output_dir="$root/$4/dynamic_rt"
 parallel=-j$(nproc)
 
 common_args="-DCMAKE_FIND_ROOT_PATH=\"${deps_dir}\""
-common_args="${common_args} -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DWANT_OPENAL=off"
+common_args="${common_args} -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DWANT_OPENAL=off -DWANT_NATIVE_IMAGE_LOADER=off"
 common_args="${common_args} -DZLIB_INCLUDE_DIR=\"${deps_dir}/include\" -DZLIB_LIBRARY=\"${deps_dir}/lib/libzlib.a\""
 common_args="${common_args} -DPNG_PNG_INCLUDE_DIR=\"${deps_dir}/include\" -DPNG_LIBRARY_RELEASE=\"${deps_dir}/lib/libpng16.a\""
 common_args="${common_args} -DJPEG_INCLUDE_DIR=\"${deps_dir}/include\" -DJPEG_LIBRARY=\"${deps_dir}/lib/libjpeg.a\""

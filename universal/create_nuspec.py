@@ -3,8 +3,8 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.7.1')
-parser.add_argument('--allegro_deps_version', default='1.12.1.0')
+parser.add_argument('--allegro_version', default='5.2.8.0')
+parser.add_argument('--allegro_deps_version', default='1.13.0.0')
 parser.add_argument('--toolchains', default='v142,v143,ClangCL')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
