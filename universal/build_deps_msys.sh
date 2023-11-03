@@ -27,23 +27,22 @@ cp minimp3/*.h "${output_dir}/include"
 
 mkdir -p "${build_dir}/zlib"
 cd "${build_dir}/zlib"
-eval cmake "${root}/zlib-1.2.11" ${common_args}
+eval cmake "${root}/zlib-1.3" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/libpng"
 cd ${build_dir}/libpng
-eval cmake "${root}/libpng-1.6.36" ${common_args}
+eval cmake "${root}/libpng-1.6.40" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/freetype"
 cd "${build_dir}/freetype"
-#~ eval cmake "${root}/freetype-2.8" ${common_args} -DWITH_HarfBuzz=OFF -DWITH_BZip2=OFF
-eval cmake "${root}/freetype-2.9.1" ${common_args} -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=TRUE -DCMAKE_DISABLE_FIND_PACKAGE_BZip2=TRUE
+eval cmake "${root}/freetype-2.13.2" ${common_args} -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_BROTLI=TRUE
 make install ${parallel}
 
 mkdir -p "${build_dir}/libjpeg-turbo"
 cd "${build_dir}/libjpeg-turbo"
-eval cmake "${root}/libjpeg-turbo-2.0.1" ${common_args} -DWITH_TURBOJPEG=false -DENABLE_SHARED=false
+eval cmake "${root}/libjpeg-turbo-3.0.0" ${common_args} -DWITH_TURBOJPEG=false -DENABLE_SHARED=false
 make install ${parallel}
 
 mkdir -p "${build_dir}/physfs"
@@ -58,12 +57,12 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/libogg"
 cd ${build_dir}/libogg
-eval cmake "${root}/libogg-1.3.3" ${common_args}
+eval cmake "${root}/libogg-1.3.5" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/libvorbis"
 cd ${build_dir}/libvorbis
-eval cmake "${root}/libvorbis-1.3.6" ${common_args}
+eval cmake "${root}/libvorbis-1.3.7" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/libtheora"
@@ -73,12 +72,12 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/flac"
 cd ${build_dir}/flac
-eval cmake "${root}/flac-1.3.2" ${common_args}
+eval cmake "${root}/flac-1.4.3" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/opus"
 cd ${build_dir}/opus
-eval cmake "${root}/opus-1.3" ${common_args}
+eval cmake "${root}/opus-1.4" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/opusfile"
@@ -88,7 +87,7 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/libwebp"
 cd ${build_dir}/libwebp
-eval cmake "${root}/libwebp-1.0.2" ${common_args} -DWEBP_BUILD_ANIM_UTILS=off -DWEBP_BUILD_CWEBP=off -DWEBP_BUILD_DWEBP=off \
+eval cmake "${root}/libwebp-1.3.2" ${common_args} -DWEBP_BUILD_ANIM_UTILS=off -DWEBP_BUILD_CWEBP=off -DWEBP_BUILD_DWEBP=off \
 	-DWEBP_BUILD_GIF2WEBP=off -DWEBP_BUILD_IMG2WEBP=off -DWEBP_BUILD_VWEBP=off -DWEBP_BUILD_WEBPINFO=off -DWEBP_BUILD_WEBPMUX=off \
-	-DWEBP_BUILD_EXTRAS=off
+	-DWEBP_BUILD_EXTRAS=off -DWEBP_BUILD_LIBWEBPMUX=off
 make install ${parallel}

@@ -1,1 +1,10 @@
+universal/nuget.exe
 universal/nupkg/
+universal/msys_package/
+universal/old/
+universal/build*
+universal/allegro*
+universal/*.zip
+universal/*.tar.gz
+universal/*.tar.xz
+universal/*.tar.bz2

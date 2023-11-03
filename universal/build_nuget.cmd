@@ -26,41 +26,41 @@ rem set generator=-G "Visual Studio 14 2015 Win64"
 rem set buildroot=%root%\nupkg\v140\x64
 rem call :build_all
 
-REM ~ echo ***** 32-bit MSVC 2017 Build *****
-REM ~ set toolchain=-T v141_xp
-REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
-REM ~ set buildroot=%root%\nupkg\v141\win32
-REM ~ call :build_all
-
-REM ~ echo ***** 64-bit MSVC 2017 Build *****
-REM ~ set toolchain=-T v141_xp
-REM ~ set generator=-G "Visual Studio 16 2019" -A x64
-REM ~ set buildroot=%root%\nupkg\v141\x64
-REM ~ call :build_all
-
-REM ~ echo ***** 32-bit MSVC 2019 Build *****
-REM ~ set toolchain=-T v142
-REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
-REM ~ set buildroot=%root%\nupkg\v142\win32
-REM ~ call :build_all
-
-REM ~ echo ***** 64-bit MSVC 2019 Build *****
-REM ~ set toolchain=-T v142
-REM ~ set generator=-G "Visual Studio 16 2019" -A x64
-REM ~ set buildroot=%root%\nupkg\v142\x64
-REM ~ call :build_all
-
-REM ~ echo ***** 32-bit MSVC 2019 Build *****
-REM ~ set toolchain=-T ClangCL
-REM ~ set generator=-G "Visual Studio 16 2019" -A Win32
-REM ~ set buildroot=%root%\nupkg\ClangCL\win32
-REM ~ call :build_all
-
-REM ~ echo ***** 64-bit MSVC 2019 Build *****
-REM ~ set toolchain=-T ClangCL
-REM ~ set generator=-G "Visual Studio 16 2019" -A x64
-REM ~ set buildroot=%root%\nupkg\ClangCL\x64
-REM ~ call :build_all
+rem echo ***** 32-bit MSVC 2017 Build *****
+rem set toolchain=-T v141_xp
+rem set generator=-G "Visual Studio 16 2019" -A Win32
+rem set buildroot=%root%\nupkg\v141\win32
+rem call :build_all
+rem
+rem echo ***** 64-bit MSVC 2017 Build *****
+rem set toolchain=-T v141_xp
+rem set generator=-G "Visual Studio 16 2019" -A x64
+rem set buildroot=%root%\nupkg\v141\x64
+rem call :build_all
+rem
+rem echo ***** 32-bit MSVC 2019 Build *****
+rem set toolchain=-T v142
+rem set generator=-G "Visual Studio 16 2019" -A Win32
+rem set buildroot=%root%\nupkg\v142\win32
+rem call :build_all
+rem
+rem echo ***** 64-bit MSVC 2019 Build *****
+rem set toolchain=-T v142
+rem set generator=-G "Visual Studio 16 2019" -A x64
+rem set buildroot=%root%\nupkg\v142\x64
+rem call :build_all
+rem
+rem echo ***** 32-bit MSVC 2019 Build *****
+rem set toolchain=-T ClangCL
+rem set generator=-G "Visual Studio 16 2019" -A Win32
+rem set buildroot=%root%\nupkg\ClangCL\win32
+rem call :build_all
+rem
+rem echo ***** 64-bit MSVC 2019 Build *****
+rem set toolchain=-T ClangCL
+rem set generator=-G "Visual Studio 16 2019" -A x64
+rem set buildroot=%root%\nupkg\ClangCL\x64
+rem call :build_all
 
 echo ***** 32-bit MSVC 2022 Build *****
 set toolchain=-T v142
@@ -100,8 +100,8 @@ call :build_all
 
 rem ***** Make NUGET Package *****
 cd %root%
-nuget pack Allegro.nuspec
-nuget pack AllegroDeps.nuspec
+REM ~ nuget pack Allegro.nuspec
+REM ~ nuget pack AllegroDeps.nuspec
 
 endlocal
 goto :EOF
@@ -153,21 +153,21 @@ set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_
 mkdir "%buildroot%\deps\include"
 copy "%root%\minimp3\*.h" "%buildroot%\deps\include"
 
-call :makedep zlib-1.2.11
-call :makedep libpng-1.6.36
-call :makedep freetype-2.9.1 "-DWITH_HarfBuzz=off" "-DWITH_BZip2=off"
-call :makedep libjpeg-turbo-2.0.1 "-DWITH_TURBOJPEG=false" "-DENABLE_SHARED=false"
+call :makedep zlib-1.3
+call :makedep libpng-1.6.40
+call :makedep freetype-2.13.2 "-DFT_DISABLE_HARFBUZZ=TRUE" "-DFT_DISABLE_HARFBUZZ=TRUE" "-DFT_DISABLE_BROTLI=TRUE"
+call :makedep libjpeg-turbo-3.0.0 "-DWITH_TURBOJPEG=false" "-DENABLE_SHARED=false"
 call :makedep physfs-3.0.2 "-DPHYSFS_BUILD_TEST=off"
 call :makedep dumb-2.0.3 "-DBUILD_EXAMPLES=off" "-DBUILD_ALLEGRO4=off"
-call :makedep libogg-1.3.3
-call :makedep libvorbis-1.3.6
+call :makedep libogg-1.3.5
+call :makedep libvorbis-1.3.7
 call :makedep libtheora-1.1.1
-call :makedep flac-1.3.2
-call :makedep opus-1.3
+call :makedep flac-1.4.3
+call :makedep opus-1.4
 call :makedep opusfile-0.11
-call :makedep libwebp-1.0.2 "-DWEBP_BUILD_ANIM_UTILS=off" "-DWEBP_BUILD_CWEBP=off" "-DWEBP_BUILD_DWEBP=off" ^
-	"-DWEBP_BUILD_GIF2WEBP=off" "-DWEBP_BUILD_IMG2WEBP=off" "-DWEBP_BUILD_VWEBP=off" "-DWEBP_BUILD_WEBPINFO=off" "-DWEBP_BUILD_WEBPMUX=off" ^
-	"-DWEBP_BUILD_EXTRAS=off"
+call :makedep libwebp-1.3.2 "-DWEBP_BUILD_ANIM_UTILS=off" "-DWEBP_BUILD_CWEBP=off" "-DWEBP_BUILD_DWEBP=off" ^
+	 "-DWEBP_BUILD_GIF2WEBP=off" "-DWEBP_BUILD_IMG2WEBP=off" "-DWEBP_BUILD_VWEBP=off" "-DWEBP_BUILD_WEBPINFO=off" "-DWEBP_BUILD_WEBPMUX=off" ^
+	 "-DWEBP_BUILD_EXTRAS=off" "-DWEBP_BUILD_LIBWEBPMUX=off"
 goto :EOF
 
 :makedep
