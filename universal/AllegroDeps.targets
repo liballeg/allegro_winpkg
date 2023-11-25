@@ -24,7 +24,8 @@
       $(AllegroLib)jpeg.lib;
       $(AllegroLib)libpng16.lib;
       $(AllegroLib)zlib.lib;
-      $(AllegroLib)webp.lib
+      $(AllegroLib)webp.lib;
+      $(AllegroLib)sharpyuv.lib
     </Allegro_AddonImageDeps>
   </PropertyGroup>
 

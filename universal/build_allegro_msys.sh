@@ -42,30 +42,30 @@ set -e
 mkdir -p "${build_dir}/allegro"
 cd ${build_dir}/allegro
 
-eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
-make install ${parallel}
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
-
-eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug ${common_args}
+eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
+
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug ${common_args}
 make install ${parallel}
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug ${common_args}
 make install ${parallel}
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug ${common_args}
 make install ${parallel}
-
-eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
+eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${static_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug ${common_args}
 make install ${parallel}
+
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
-
-eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=Debug ${common_args}
+eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=RelWithDebInfo ${common_args}
 make install ${parallel}
+
 eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=Debug ${common_args}
+make install ${parallel}
+eval cmake "${root}/allegro" -DCMAKE_INSTALL_PREFIX="${dynamic_output_dir}" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=off -DCMAKE_BUILD_TYPE=Debug ${common_args}
 make install ${parallel}

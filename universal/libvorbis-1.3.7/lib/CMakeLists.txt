@@ -164,4 +164,5 @@ endif()
 
 if(MSVC)
     set_target_properties(vorbis PROPERTIES COMPILE_FLAGS "/MT /Zl")
+    set_target_properties(vorbisfile PROPERTIES COMPILE_FLAGS "/MT /Zl")
 endif()

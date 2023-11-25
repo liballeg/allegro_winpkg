@@ -37,7 +37,7 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/freetype"
 cd "${build_dir}/freetype"
-eval cmake "${root}/freetype-2.13.2" ${common_args} -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_BROTLI=TRUE
+eval cmake "${root}/freetype-2.13.2" ${common_args} -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_HARFBUZZ=TRUE -DFT_DISABLE_BROTLI=TRUE -DFT_DISABLE_BZIP2=TRUE
 make install ${parallel}
 
 mkdir -p "${build_dir}/libjpeg-turbo"
@@ -82,7 +82,7 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/opusfile"
 cd ${build_dir}/opusfile
-eval cmake "${root}/opusfile-0.11" ${common_args}
+eval cmake "${root}/opusfile-0.12" ${common_args}
 make install ${parallel}
 
 mkdir -p "${build_dir}/libwebp"

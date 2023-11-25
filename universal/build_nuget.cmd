@@ -100,8 +100,8 @@ call :build_all
 
 rem ***** Make NUGET Package *****
 cd %root%
-REM ~ nuget pack Allegro.nuspec
-REM ~ nuget pack AllegroDeps.nuspec
+nuget pack Allegro.nuspec
+nuget pack AllegroDeps.nuspec
 
 endlocal
 goto :EOF
@@ -123,7 +123,7 @@ set shared=yes
 set build_type=RelWithDebInfo
 set static_runtime=yes
 call :allegro
-rem **** Debug Allegro ****
+REM ~ rem **** Debug Allegro ****
 set monolith=no
 set shared=yes
 set build_type=Debug
@@ -164,7 +164,7 @@ call :makedep libvorbis-1.3.7
 call :makedep libtheora-1.1.1
 call :makedep flac-1.4.3
 call :makedep opus-1.4
-call :makedep opusfile-0.11
+call :makedep opusfile-0.12
 call :makedep libwebp-1.3.2 "-DWEBP_BUILD_ANIM_UTILS=off" "-DWEBP_BUILD_CWEBP=off" "-DWEBP_BUILD_DWEBP=off" ^
 	 "-DWEBP_BUILD_GIF2WEBP=off" "-DWEBP_BUILD_IMG2WEBP=off" "-DWEBP_BUILD_VWEBP=off" "-DWEBP_BUILD_WEBPINFO=off" "-DWEBP_BUILD_WEBPMUX=off" ^
 	 "-DWEBP_BUILD_EXTRAS=off" "-DWEBP_BUILD_LIBWEBPMUX=off"
