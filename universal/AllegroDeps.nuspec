@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>AllegroDeps</id>
-    <version>1.13.0.0</version>
+    <version>1.14.0.0</version>
     <title>Allegro Dependencies Package</title>
     <authors>Allegro Developers</authors>
     <owners>Allegro Developers</owners>
@@ -38,6 +38,7 @@
     <file src="nupkg\v142\win32\deps\lib\webp.lib" target="build\native\v142\win32\deps\lib\" />
     <file src="nupkg\v142\win32\deps\lib\webpdecoder.lib" target="build\native\v142\win32\deps\lib\" />
     <file src="nupkg\v142\win32\deps\lib\webpdemux.lib" target="build\native\v142\win32\deps\lib\" />
+    <file src="nupkg\v142\win32\deps\lib\sharpyuv.lib" target="build\native\v142\win32\deps\lib\" />
     <file src="nupkg\v142\x64\deps\lib\dumb.lib" target="build\native\v142\x64\deps\lib\" />
     <file src="nupkg\v142\x64\deps\lib\FLAC.lib" target="build\native\v142\x64\deps\lib\" />
     <file src="nupkg\v142\x64\deps\lib\freetype.lib" target="build\native\v142\x64\deps\lib\" />
@@ -54,6 +55,7 @@
     <file src="nupkg\v142\x64\deps\lib\webp.lib" target="build\native\v142\x64\deps\lib\" />
     <file src="nupkg\v142\x64\deps\lib\webpdecoder.lib" target="build\native\v142\x64\deps\lib\" />
     <file src="nupkg\v142\x64\deps\lib\webpdemux.lib" target="build\native\v142\x64\deps\lib\" />
+    <file src="nupkg\v142\x64\deps\lib\sharpyuv.lib" target="build\native\v142\x64\deps\lib\" />
     <file src="nupkg\v143\win32\deps\lib\dumb.lib" target="build\native\v143\win32\deps\lib\" />
     <file src="nupkg\v143\win32\deps\lib\FLAC.lib" target="build\native\v143\win32\deps\lib\" />
     <file src="nupkg\v143\win32\deps\lib\freetype.lib" target="build\native\v143\win32\deps\lib\" />
@@ -70,6 +72,7 @@
     <file src="nupkg\v143\win32\deps\lib\webp.lib" target="build\native\v143\win32\deps\lib\" />
     <file src="nupkg\v143\win32\deps\lib\webpdecoder.lib" target="build\native\v143\win32\deps\lib\" />
     <file src="nupkg\v143\win32\deps\lib\webpdemux.lib" target="build\native\v143\win32\deps\lib\" />
+    <file src="nupkg\v143\win32\deps\lib\sharpyuv.lib" target="build\native\v143\win32\deps\lib\" />
     <file src="nupkg\v143\x64\deps\lib\dumb.lib" target="build\native\v143\x64\deps\lib\" />
     <file src="nupkg\v143\x64\deps\lib\FLAC.lib" target="build\native\v143\x64\deps\lib\" />
     <file src="nupkg\v143\x64\deps\lib\freetype.lib" target="build\native\v143\x64\deps\lib\" />
@@ -86,6 +89,7 @@
     <file src="nupkg\v143\x64\deps\lib\webp.lib" target="build\native\v143\x64\deps\lib\" />
     <file src="nupkg\v143\x64\deps\lib\webpdecoder.lib" target="build\native\v143\x64\deps\lib\" />
     <file src="nupkg\v143\x64\deps\lib\webpdemux.lib" target="build\native\v143\x64\deps\lib\" />
+    <file src="nupkg\v143\x64\deps\lib\sharpyuv.lib" target="build\native\v143\x64\deps\lib\" />
     <file src="nupkg\ClangCL\win32\deps\lib\dumb.lib" target="build\native\ClangCL\win32\deps\lib\" />
     <file src="nupkg\ClangCL\win32\deps\lib\FLAC.lib" target="build\native\ClangCL\win32\deps\lib\" />
     <file src="nupkg\ClangCL\win32\deps\lib\freetype.lib" target="build\native\ClangCL\win32\deps\lib\" />
@@ -102,6 +106,7 @@
     <file src="nupkg\ClangCL\win32\deps\lib\webp.lib" target="build\native\ClangCL\win32\deps\lib\" />
     <file src="nupkg\ClangCL\win32\deps\lib\webpdecoder.lib" target="build\native\ClangCL\win32\deps\lib\" />
     <file src="nupkg\ClangCL\win32\deps\lib\webpdemux.lib" target="build\native\ClangCL\win32\deps\lib\" />
+    <file src="nupkg\ClangCL\win32\deps\lib\sharpyuv.lib" target="build\native\ClangCL\win32\deps\lib\" />
     <file src="nupkg\ClangCL\x64\deps\lib\dumb.lib" target="build\native\ClangCL\x64\deps\lib\" />
     <file src="nupkg\ClangCL\x64\deps\lib\FLAC.lib" target="build\native\ClangCL\x64\deps\lib\" />
     <file src="nupkg\ClangCL\x64\deps\lib\freetype.lib" target="build\native\ClangCL\x64\deps\lib\" />
@@ -118,5 +123,6 @@
     <file src="nupkg\ClangCL\x64\deps\lib\webp.lib" target="build\native\ClangCL\x64\deps\lib\" />
     <file src="nupkg\ClangCL\x64\deps\lib\webpdecoder.lib" target="build\native\ClangCL\x64\deps\lib\" />
     <file src="nupkg\ClangCL\x64\deps\lib\webpdemux.lib" target="build\native\ClangCL\x64\deps\lib\" />
+    <file src="nupkg\ClangCL\x64\deps\lib\sharpyuv.lib" target="build\native\ClangCL\x64\deps\lib\" />
   </files>
 </package>

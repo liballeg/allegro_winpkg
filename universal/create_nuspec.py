@@ -3,8 +3,8 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.8.0')
-parser.add_argument('--allegro_deps_version', default='1.13.0.0')
+parser.add_argument('--allegro_version', default='5.2.9.0')
+parser.add_argument('--allegro_deps_version', default='1.14.0.0')
 parser.add_argument('--toolchains', default='v142,v143,ClangCL')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
@@ -107,6 +107,7 @@ DEPS_FILENAMES = [
 	"webp.lib",
 	"webpdecoder.lib",
 	"webpdemux.lib",
+	"sharpyuv.lib",
 ]
 
 def make_line(bits, version, dll_loc, filename):
