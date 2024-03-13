@@ -63,7 +63,7 @@ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\opusfile"
 cd %build_dir%\opusfile
-cmake "%root%\opusfile-0.11" %common_args%  || goto :error
+cmake "%root%\opusfile-0.12" %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
 mkdir "%build_dir%\libwebp"
