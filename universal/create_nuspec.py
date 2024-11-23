@@ -3,8 +3,8 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.9.0')
-parser.add_argument('--allegro_deps_version', default='1.14.0.0')
+parser.add_argument('--allegro_version', default='5.2.10.0-nightly.20241007')
+parser.add_argument('--allegro_deps_version', default='1.15.0.0-nightly.20241007')
 parser.add_argument('--toolchains', default='v142,v143,ClangCL')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
@@ -35,7 +35,7 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
   </metadata>
   <files>
 <!-- include files (same for all versions) -->
-    <file src="nupkg\\{include_toolchain}\\win32\\include\\**" target="build\\native\\include\\" />
+    <file src="nupkg\\{include_toolchain}\\{include_bits}\\include\\**" target="build\\native\\include\\" />
 <!-- additional targets and user interface definitions -->
     <file src="Allegro.targets" target="build\\native\\Allegro.targets" />
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
@@ -66,7 +66,7 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
   </metadata>
   <files>
 <!-- include files (same for all versions) -->
-    <file src="nupkg\\{include_toolchain}\\win32\\deps\\include\\**" target="build\\native\\include\\" />
+    <file src="nupkg\\{include_toolchain}\\{include_bits}\\deps\\include\\**" target="build\\native\\include\\" />
 <!-- additional targets and user interface definitions -->
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
     {extra_files}
@@ -117,10 +117,11 @@ def make_line(bits, version, dll_loc, filename):
 	return '<file src="' + from_path + '" target="' + to_path + '" />'
 
 toolchains = ARGS.toolchains.split(',')
+all_bits = ARGS.bits.split(',')
 allegro_lines = []
 deps_lines = []
 for version in toolchains:
-	for bits in ARGS.bits.split(','):
+	for bits in all_bits:
 		allegro_lines.append(make_line(bits, version, 'lib', 'allegro_monolith-static.lib'))
 		for filename in DEPS_FILENAMES:
 			deps_lines.append(make_line(bits, version, 'deps\\lib', filename))
@@ -136,13 +137,15 @@ allegro_nuspec = ALLEGRO_NUSPEC_TEMPLATE.format(
 	allegro_version=ARGS.allegro_version,
 	allegro_deps_version=ARGS.allegro_deps_version,
 	extra_files='\n    '.join(allegro_lines),
-	include_toolchain=toolchains[0]
+	include_toolchain=toolchains[0],
+	include_bits=all_bits[0],
 	)
 
 deps_nuspec = ALLEGRO_DEPS_NUSPEC_TEMPLATE.format(
 	allegro_deps_version=ARGS.allegro_deps_version,
 	extra_files='\n    '.join(deps_lines),
-	include_toolchain=toolchains[0]
+	include_toolchain=toolchains[0],
+	include_bits=all_bits[0],
 	)
 
 with open('Allegro.nuspec', 'w') as f:
