@@ -91,3 +91,8 @@ eval cmake "${root}/libwebp-1.3.2" ${common_args} -DWEBP_BUILD_ANIM_UTILS=off -D
 	-DWEBP_BUILD_GIF2WEBP=off -DWEBP_BUILD_IMG2WEBP=off -DWEBP_BUILD_VWEBP=off -DWEBP_BUILD_WEBPINFO=off -DWEBP_BUILD_WEBPMUX=off \
 	-DWEBP_BUILD_EXTRAS=off -DWEBP_BUILD_LIBWEBPMUX=off
 make install ${parallel}
+
+mkdir -p "${build_dir}/libopenmpt"
+cd ${build_dir}/libopenmpt
+eval cmake "${root}/libopenmpt-0.7.11" ${common_args}
+make install ${parallel}

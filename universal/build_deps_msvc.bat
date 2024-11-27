@@ -73,6 +73,11 @@ cmake "%root%\libwebp-1.3.2" %common_args% -DWEBP_BUILD_ANIM_UTILS=off -DWEBP_BU
 	-DWEBP_BUILD_EXTRAS=off -DWEBP_BUILD_LIBWEBPMUX=off || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
+mkdir "%build_dir%\libopenmpt"
+cd %build_dir%\libopenmpt
+cmake "%root%\libopenmpt-0.7.11" %common_args%  || goto :error
+cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+
 goto :success
 
 :error
