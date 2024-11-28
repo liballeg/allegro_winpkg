@@ -168,7 +168,7 @@ call :makedep opusfile-0.12
 call :makedep libwebp-1.3.2 "-DWEBP_BUILD_ANIM_UTILS=off" "-DWEBP_BUILD_CWEBP=off" "-DWEBP_BUILD_DWEBP=off" ^
 	 "-DWEBP_BUILD_GIF2WEBP=off" "-DWEBP_BUILD_IMG2WEBP=off" "-DWEBP_BUILD_VWEBP=off" "-DWEBP_BUILD_WEBPINFO=off" "-DWEBP_BUILD_WEBPMUX=off" ^
 	 "-DWEBP_BUILD_EXTRAS=off" "-DWEBP_BUILD_LIBWEBPMUX=off"
-call :makedep libopenmpt-0.7.11
+call :makedep_release libopenmpt-0.7.11
 goto :EOF
 
 :makedep
@@ -179,6 +179,16 @@ mkdir "%buildroot%\%dep_name%"
 cd %buildroot%\%dep_name%
 cmake  %args% %* "%root%\%dep_name%"  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo -j %jobs% || goto :error
+goto :EOF
+
+:makedep_release
+set dep_name=%1
+shift
+echo ***** Building Dependency %dep_name% *****
+mkdir "%buildroot%\%dep_name%"
+cd %buildroot%\%dep_name%
+cmake  %args% %* "%root%\%dep_name%"  || goto :error
+cmake --build . --target INSTALL --config Release -j %jobs% || goto :error
 goto :EOF
 
 :error

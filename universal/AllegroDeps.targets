@@ -43,8 +43,8 @@
       $(AllegroLib)vorbisfile.lib;
       $(AllegroLib)ogg.lib;
       $(AllegroLib)opus.lib;
-      $(AllegroLib)opusfile.lib
-      $(AllegroLib)libopenmpt.lib
+      $(AllegroLib)opusfile.lib;
+      $(AllegroLib)openmpt.lib
     </Allegro_AddonAcodecDeps>
   </PropertyGroup>
 

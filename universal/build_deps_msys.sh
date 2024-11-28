@@ -94,5 +94,5 @@ make install ${parallel}
 
 mkdir -p "${build_dir}/libopenmpt"
 cd ${build_dir}/libopenmpt
-eval cmake "${root}/libopenmpt-0.7.11" ${common_args}
+eval cmake "${root}/libopenmpt-0.7.11" ${common_args} -DCMAKE_BUILD_TYPE=Release
 make install ${parallel}
