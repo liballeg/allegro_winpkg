@@ -62,39 +62,51 @@ rem set generator=-G "Visual Studio 16 2019" -A x64
 rem set buildroot=%root%\nupkg\ClangCL\x64
 rem call :build_all
 
-echo ***** 32-bit MSVC 2022 Build *****
-set toolchain=-T v142
-set generator=-G "Visual Studio 17 2022" -A Win32
-set buildroot=%root%\nupkg\v142\win32
-call :build_all
+REM ~ echo ***** 32-bit MSVC 2022 Build *****
+REM ~ set toolchain=-T v142
+REM ~ set generator=-G "Visual Studio 17 2022" -A Win32
+REM ~ set buildroot=%root%\nupkg\v142\win32
+REM ~ call :build_all
 
-echo ***** 64-bit MSVC 2022 Build *****
-set toolchain=-T v142
-set generator=-G "Visual Studio 17 2022" -A x64
-set buildroot=%root%\nupkg\v142\x64
-call :build_all
+REM ~ echo ***** 64-bit MSVC 2022 Build *****
+REM ~ set toolchain=-T v142
+REM ~ set generator=-G "Visual Studio 17 2022" -A x64
+REM ~ set buildroot=%root%\nupkg\v142\x64
+REM ~ call :build_all
 
 echo ***** 32-bit MSVC 2022 Build *****
 set toolchain=-T v143
-set generator=-G "Visual Studio 17 2022" -A Win32
+set generator=-G "Visual Studio 18 2026" -A Win32
 set buildroot=%root%\nupkg\v143\win32
 call :build_all
 
 echo ***** 64-bit MSVC 2022 Build *****
 set toolchain=-T v143
-set generator=-G "Visual Studio 17 2022" -A x64
+set generator=-G "Visual Studio 18 2026" -A x64
 set buildroot=%root%\nupkg\v143\x64
 call :build_all
 
 echo ***** 32-bit MSVC 2022 Build *****
+set toolchain=-T v145
+set generator=-G "Visual Studio 18 2026" -A Win32
+set buildroot=%root%\nupkg\v145\win32
+call :build_all
+
+echo ***** 64-bit MSVC 2022 Build *****
+set toolchain=-T v145
+set generator=-G "Visual Studio 18 2026" -A x64
+set buildroot=%root%\nupkg\v145\x64
+call :build_all
+
+echo ***** 32-bit MSVC 2022 Build *****
 set toolchain=-T ClangCL
-set generator=-G "Visual Studio 17 2022" -A Win32
+set generator=-G "Visual Studio 18 2026" -A Win32
 set buildroot=%root%\nupkg\ClangCL\win32
 call :build_all
 
 echo ***** 64-bit MSVC 2022 Build *****
 set toolchain=-T ClangCL
-set generator=-G "Visual Studio 17 2022" -A x64
+set generator=-G "Visual Studio 18 2026" -A x64
 set buildroot=%root%\nupkg\ClangCL\x64
 call :build_all
 
@@ -136,6 +148,7 @@ goto :EOF
 rem Build Allegro
 mkdir "%buildroot%\allegro"
 echo ***** Building Allegro shared=%shared% *****
+set DXSDK_DIR=C:\DXSDK
 set args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%buildroot%\deps" -DCMAKE_INSTALL_PREFIX="%buildroot%"
 set args=%args% -DWANT_MONOLITH=%monolith% -DSHARED=%shared% -DWANT_STATIC_RUNTIME=%static_runtime% -DCMAKE_BUILD_TYPE=%build_type%
 set args=%args% -DWANT_NATIVE_IMAGE_LOADER=off -DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DFREETYPE_ZLIB=on -DFREETYPE_PNG=on -DOPENMPT_ZLIB=on -DOPENMPT_VORBIS=on
@@ -172,23 +185,42 @@ call :makedep_release libopenmpt-0.7.11
 goto :EOF
 
 :makedep
+setlocal EnableDelayedExpansion
 set dep_name=%1
-shift
+
+for %%a in (%*) do (
+  if not !position! lss 1 (
+    set dep_args=!dep_args! %%a
+  ) else (
+    set /a "position=!position!+1"
+  )
+)
+
 echo ***** Building Dependency %dep_name% *****
 mkdir "%buildroot%\%dep_name%"
 cd %buildroot%\%dep_name%
-cmake  %args% %* "%root%\%dep_name%"  || goto :error
+cmake %args% %dep_args% "%root%\%dep_name%"  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo -j %jobs% || goto :error
+endlocal
 goto :EOF
 
 :makedep_release
 set dep_name=%1
-shift
+
+for %%a in (%*) do (
+  if not !position! lss 1 (
+    set dep_args=!dep_args! %%a
+  ) else (
+    set /a "position=!position!+1"
+  )
+)
+
 echo ***** Building Dependency %dep_name% *****
 mkdir "%buildroot%\%dep_name%"
 cd %buildroot%\%dep_name%
-cmake  %args% %* "%root%\%dep_name%"  || goto :error
+cmake  %args% %dep_args% "%root%\%dep_name%"  || goto :error
 cmake --build . --target INSTALL --config Release -j %jobs% || goto :error
+endlocal
 goto :EOF
 
 :error

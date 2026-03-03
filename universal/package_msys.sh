@@ -3,10 +3,10 @@
 set -x
 set -e
 
-ALLEGRO_VERSION=5.2.10.0
-DEPS_VERSION=1.15.0
-GCC_VERSION_32=14.2.0
-GCC_VERSION_64=14.2.0
+ALLEGRO_VERSION=5.2.11.3
+DEPS_VERSION=1.16.0
+GCC_VERSION_32=15.2.0
+GCC_VERSION_64=15.2.0
 
 make_deps_package() {
 	# $1 - path to copy from
@@ -29,6 +29,7 @@ make_allegro_package() {
 	rm -Rf $DEST
 	mkdir -p $DEST
 	cp -r ../$1/* $DEST
+	rm -Rf $DEST/lib/cmake
 	echo $DEPS_VERSION > $DEST/allegro_deps_version.txt
 	7z a -r -tzip -mx=9 ../$2-$ALLEGRO_VERSION.zip $DEST
 }

@@ -2,29 +2,30 @@ if not defined build_dir goto :nodirect
 
 set root=%cd%
 set common_args=%generator% %toolchain% -DCMAKE_PREFIX_PATH="%deps%" -DCMAKE_INSTALL_PREFIX="%output%" ^
--DWANT_EXAMPLES=off -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DFREETYPE_ZLIB=on -DFREETYPE_PNG=on ^
+-DWANT_EXAMPLES=on -DWANT_TESTS=off -DWANT_DEMO=off -DWANT_ACODEC_DYNAMIC_LOAD=off -DFLAC_STATIC=on -DFREETYPE_ZLIB=on -DFREETYPE_PNG=on ^
 -DOPENMPT_ZLIB=on -DOPENMPT_VORBIS=on
 
 mkdir "%build_dir%\allegro"
 cd "%build_dir%\allegro"
+set DXSDK_DIR=C:\DXSDK
 
-cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args% || goto :error
-cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
-cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args%  || goto :error
-cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+REM ~ cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args% || goto :error
+REM ~ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+REM ~ cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args%  || goto :error
 cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
-cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args%  || goto :error
-cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
+REM ~ cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=RelWithDebInfo %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config RelWithDebInfo  || goto :error
 
-cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug %common_args%  || goto :error
-cmake --build . --target INSTALL --config Debug  || goto :error
-cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
-cmake --build . --target INSTALL --config Debug  || goto :error
-cmake %root%\allegro -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
-cmake --build . --target INSTALL --config Debug  || goto :error
-cmake %root%\allegro -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
-cmake --build . --target INSTALL --config Debug  || goto :error
+REM ~ cmake "%root%\allegro" -DWANT_MONOLITH=off -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config Debug  || goto :error
+REM ~ cmake "%root%\allegro" -DWANT_MONOLITH=on -DSHARED=on -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config Debug  || goto :error
+REM ~ cmake %root%\allegro -DWANT_MONOLITH=off -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config Debug  || goto :error
+REM ~ cmake %root%\allegro -DWANT_MONOLITH=on -DSHARED=off -DWANT_STATIC_RUNTIME=on -DCMAKE_BUILD_TYPE=Debug  %common_args%  || goto :error
+REM ~ cmake --build . --target INSTALL --config Debug  || goto :error
 
 goto :success
 

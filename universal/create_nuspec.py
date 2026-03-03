@@ -3,9 +3,9 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--allegro_version', default='5.2.10.0')
-parser.add_argument('--allegro_deps_version', default='1.15.0.0')
-parser.add_argument('--toolchains', default='v142,v143,ClangCL')
+parser.add_argument('--allegro_version', default='5.2.11.3')
+parser.add_argument('--allegro_deps_version', default='1.16.0.0')
+parser.add_argument('--toolchains', default='v143,v145,ClangCL')
 parser.add_argument('--bits', default='win32,x64')
 ARGS = parser.parse_args()
 
@@ -17,14 +17,13 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <version>{allegro_version}</version>
     <title>Allegro Game Programming Library</title>
     <authors>Allegro Developers</authors>
-    <owners>Allegro Developers</owners>
     <license type="expression">Zlib</license>
     <projectUrl>http://liballeg.org/</projectUrl>
-    <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
+    <icon>alex.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Allegro 5 is a cross-platform library mainly aimed at video game and multimedia programming. It handles common, low-level tasks such as creating windows, accepting user input, loading data, drawing images, playing sounds, etc. and generally abstracting away the underlying platform. However, Allegro is not a game engine: you are free to design and structure your program as you like.</description>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
-    <copyright>Copyright © 2008-2021 the Allegro 5 Development Team</copyright>
+    <copyright>Copyright © 2008-2025 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
     <dependencies>
@@ -36,6 +35,7 @@ ALLEGRO_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
   <files>
 <!-- include files (same for all versions) -->
     <file src="nupkg\\{include_toolchain}\\{include_bits}\\include\\**" target="build\\native\\include\\" />
+    <file src="alex.png" target="alex.png" />
 <!-- additional targets and user interface definitions -->
     <file src="Allegro.targets" target="build\\native\\Allegro.targets" />
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
@@ -53,20 +53,20 @@ ALLEGRO_DEPS_NUSPEC_TEMPLATE = """<?xml version="1.0" encoding="utf-8"?>
     <version>{allegro_deps_version}</version>
     <title>Allegro Dependencies Package</title>
     <authors>Allegro Developers</authors>
-    <owners>Allegro Developers</owners>
     <license type="expression">Zlib</license>
     <projectUrl>http://liballeg.org/</projectUrl>
-    <iconUrl>http://liballeg.org/images/alex.png</iconUrl>
+    <icon>alex.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the dependencies for Allegro 5. You should install the main Allegro package and this one will be automatically added as a dependency.</description>
     <releaseNotes>Please refer to the online release notes at http://liballeg.org/changes-5.2.html </releaseNotes>
-    <copyright>Copyright © 2008-2021 the Allegro 5 Development Team</copyright>
+    <copyright>Copyright © 2008-2025 the Allegro 5 Development Team</copyright>
     <language>en-GB</language>
     <tags>Native</tags>
   </metadata>
   <files>
 <!-- include files (same for all versions) -->
     <file src="nupkg\\{include_toolchain}\\{include_bits}\\deps\\include\\**" target="build\\native\\include\\" />
+    <file src="alex.png" target="alex.png" />
 <!-- additional targets and user interface definitions -->
     <file src="AllegroDeps.targets" target="build\\native\\AllegroDeps.targets" />
     {extra_files}
